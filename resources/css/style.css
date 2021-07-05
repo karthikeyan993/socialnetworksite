@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: sans-serif, helvetica, arial;
+
+}
+
+
+
+body{
+    background-color: rgb(255, 236, 236);
+
+}
+
+
+
+/*  TOP STRIP */
+
+.top-strip{
+    width: 100%;
+    height: 8%;
+    background-color: rgb(63, 66, 87);
+    position: absolute;
+}
+
+/* TOP STRIP LEFT */
+
+.top-strip-left{
+    width:50%;
+    height: 100%;
+    position: absolute;
+    float: left;
+
+}
+
+.profile-page{
+    width:20%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.profile-page-text{
+    position: absolute;
+    padding: 15%;
+}
+
+.profile-page-text h3{
+    font-size: 0.5rem;
+    color: white;
+}
+
+.search-box{
+    width: 60%;
+    height:100%;
+    position: absolute;
+    left: 20%;
+    border: none;
+}
+
+.search-box-input [type=text]{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    font-size: 12px;
+    color: grey;
+    background-color: rgb(73, 76, 98);
+    border: none;
+    padding-left: 5%;
+}
+
+.search-box-button [type=search]{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    left: 80%;
+    background-color: rgb(73, 76, 98);
+    border: none;
+    padding-left: 5%;
+}
+
+
+
+.search-box-button p{
+    font-size: 12px;
+}
+
+.find-friends{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    left:80%;
+    overflow: hidden;
+}
+
+.find-friends-text{
+    position: absolute;
+    padding: 15%;
+}
+
+.find-friends-text h3{
+    font-size: 0.5rem;
+    color: white;
+}
+
+/*TOP STRIP RIGHT*/
+
+.top-strip-right{
+    width: 50%;
+    height: 100%;
+    float: right;
+
+}
+
+.top-strip-right-container{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.top-right-notification{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.top-right-profile{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.top-right-notification-smiley{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+.top-right-notification-message{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+.top-right-notification-thunder{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+.top-right-profile-picture{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+.top-right-profile-picture img {
+    border-radius: 50%;
+    width:70%;
+    height:60%;
+    margin-top: 25%;
+    margin-left: 10%;
+}
+
+.top-right-profile-name{
+    width: 75%;
+    height: 100%;
+}
+
+.top-right-profile-name{
+    width: 75%;
+    height: 100%;
+    float: right;
+}
+
+.top-right-profile-name-container{
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.top-right-profile-name-container-main-name{
+    width: 100%;
+    height: 50%;
+}
+
+.top-right-profile-name-container-main-name h4{
+    font-size: 60%;
+    color: white;
+    padding-top: 20%;
+}
+
+
+.top-right-profile-name-container-main-nickname{
+    width: 100%;
+    height: 50%;
+}
+
+.top-right-profile-name-container-main-nickname h4{
+    font-size: 40%;
+    color: grey;
+    padding-top: 7.5%;
+    padding-left: 5%;
+}
+
+.top-right-profile-dropdown{
+    width: 30%;
+    height: 100%;
+    float: right;
+}
+
+.top-right-profile-dropdown-container{
+    padding-top: 50%;
+    float: left;
+}
+
+.top-right-profile-dropdown-container [type=dropdown]{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(63, 66, 87);
+    border: none;
+    color: white;
+
+}
