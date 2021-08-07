@@ -1,0 +1,44 @@
+[
+    {
+        "profilePicture": "./resources/images/profilephoto.jpg",
+        "firstName": "James",
+        "secondName": "Speigel",
+        "postTime":"19 hours ago",
+        "post":{
+            "text":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corrupti aut doloribus ipsum recusandae sapiente, maiores veritatis dolore accusantium, consequuntur nostrum quam. Quis, facilis officia deserunt provident, est nisi culpa soluta dolore consequatur quam minima et.",
+            "picture":"/resources/images/postPicture1",
+            "poll":"dummy data"
+        },
+        "PostLikes":8,
+        "friends":{
+            "firstFriend":{
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            "secondFriend":{
+                "firstName": "Robert",
+                "secondName":"King",
+                "profilePhoto":"./resources/images/stranger2.jpg"
+            },
+            "thirdFriend":{
+                "firstName": "Michael",
+                "secondName":"Oliver",
+                "profilePhoto":"./resources/images/stranger3.jpg"
+            },
+            "fourthFriend":{
+                "firstName": "Bruce",
+                "secondName":"Williams",
+                "profilePhoto":"./resources/images/stranger2.jpg"
+            },
+            "fifthFriend":{
+                "firstName": "Sasha",
+                "secondName":"Pattinson",
+                "profilePhoto":"./resources/images/stranger2.jpg"
+            }
+        },
+        "noOfComments":17,
+        "noOfSharing":24
+    }
+
+]
