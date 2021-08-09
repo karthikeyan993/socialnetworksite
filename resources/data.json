@@ -7,8 +7,12 @@
         "post":{
             "text":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corrupti aut doloribus ipsum recusandae sapiente, maiores veritatis dolore accusantium, consequuntur nostrum quam. Quis, facilis officia deserunt provident, est nisi culpa soluta dolore consequatur quam minima et.",
             "picture":"/resources/images/postPicture1",
-            "poll":"dummy data"
-        },
+            "poll":{
+                "Option1":"Option 1",
+                "Option2":"Option 2",
+                "Option3":"Option 3",
+                "Option4":"Option 4"
+            },
         "PostLikes":8,
         "friends":{
             "firstFriend":{

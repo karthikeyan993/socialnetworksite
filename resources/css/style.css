@@ -155,7 +155,7 @@ body{
     max-width: 70%;
     height: 300px;
     overflow: hidden;
-    margin: 30px auto 20px auto;
+    margin: 25px auto 20px auto;
     border-radius: 0.5%;
 
 }
@@ -575,5 +575,148 @@ body{
     align-self: center;
 }
 
+/* Box 2 */
+
+.center-content-container-box2{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 2%;   
+}
+
+.center-content-container-box2-main-picstrip{
+
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    margin-left: 4%;
+    margin-top: 2%;
+    justify-content: space-between;
+}
+
+.center-content-container-box2-post{
+    display: flex;
+    flex-direction: column;
+    height: 370px;
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: solid 1px rgba(209, 209, 209, 0.637);
+}
+
+.center-content-container-box2-post-text{
+    height: 30px;
+
+}
+
+.center-content-container-box2-post-text p{
+    
+    margin-top: 2%;
+    color: rgb(165, 165, 165);
+    font-size: 12px;
+}
+
+.center-content-container-box2-post-photo {
+    background-color: rgba(128, 128, 128, 0.459);
+    height: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.center-content-container-box2-post-photo img{
+    display: block;
+    margin: 0 auto;
+    border-radius: 2%;
+}
+
+.box2-footer{
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+
+/* Box 3 */
+
+.center-content-container-box3{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 350px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 2%;   
+}
+
+.box3-strip{
+    position: relative;
+    bottom: 4%;
+}
+
+.box3-footer{
+    display: flex;
+    height: 40px;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.box3-footer-friends{
+    display: flex;
+    margin-left: 5%;
+}
+
+.box3-footer-friends-name{
+    margin-left: 5%;
+}
+
+/*Box 3 poll*/
 
 
+.center-content-container-box3-post{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 50%;
+    width: 90%;
+    border-bottom: solid 1px rgba(209, 209, 209, 0.637);
+}
+
+.box3-poll-question{
+    height: 10%;
+    width: 100%;
+    position: relative;
+    bottom: 10%;
+}
+
+.box3-poll-question p{
+    font-size: 14px;
+    color: rgb(165, 165, 165);
+}
+
+.box3-poll-container{
+    height: 90%;
+    width: 100%;
+}
+
+.box3-poll-container label{
+    color: rgb(165, 165, 165);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.box3-poll-container input[type=submit]{
+    width: 60px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 7%;
+    background-color: grey;
+    color: white;
+    margin-top: 3%;
+    font-size: 12px;
+}
