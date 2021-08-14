@@ -1,0 +1,99 @@
+[
+    {
+        "profilePicture": "./resources/images/profilephoto.jpg",
+        "firstName": "James",
+        "secondName": "Speigel",
+        "postTime":"19 hours ago",
+        "type" : 1,
+        "post":{
+            "text":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corrupti aut doloribus ipsum recusandae sapiente, maiores veritatis dolore accusantium, consequuntur nostrum quam. Quis, facilis officia deserunt provident, est nisi culpa soluta dolore consequatur quam minima et.",
+            "picture":"/resources/images/postPicture1",
+            "poll":[
+                "op 1",
+                "op 1",
+                "op 1",
+                "op 1"
+            ]
+        },
+        "PostLikes":8,
+        "friends":[
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            }
+            
+        ],
+        "noOfComments":17,
+        "noOfSharing":24
+    },
+    {
+        "profilePicture": "./resources/images/profilephoto.jpg",
+        "firstName": "James",
+        "secondName": "Speigel",
+        "postTime":"19 hours ago",
+        "type" : 2,
+        "post":{
+            "text":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corrupti aut doloribus ipsum recusandae sapiente, maiores veritatis dolore accusantium, consequuntur nostrum quam. Quis, facilis officia deserunt provident, est nisi culpa soluta dolore consequatur quam minima et.",
+            "picture":"/resources/images/postPicture1",
+            "poll":[
+                "op 1",
+                "op 1",
+                "op 1",
+                "op 1"
+            ]
+        },
+        "PostLikes":8,
+        "friends":[
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            },
+            {
+                "firstName": "Jenny",
+                "secondName":"James",
+                "profilePhoto":"./resources/images/stranger1.jpg"
+            }
+            
+        ],
+        "noOfComments":17,
+        "noOfSharing":24
+    }
+
+]
