@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
     <div class="top-strip">
         <div class="top-strip-profiletext-container">
             <h3>PROFILE PAGE</h3>
@@ -65,7 +66,7 @@
                     <h4>San Francisco, CA</h4>
                 </div>
             </div>
-            <div class="cover-photo-text-menu cover-photo-right">
+        <div class="cover-photo-text-menu cover-photo-right">
                 <h3>Photos</h3>
             </div>
             <div class="cover-photo-text-menu cover-photo-right">
@@ -84,87 +85,252 @@
             </div>
         </div>
     </div>
-    <div class="center-content-container">
-        <div class="center-content-container-box1">
-             <div class="center-content-container-box1-main">
-                <div class="center-content-container-box1-main-picstrip">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont">
-                        <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                            <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo">
+    <div id="box" class="center-content-container"> 
+    </div>
+
+   
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let content="";
+        let data = [
+        {
+            "profilePicture": "./resources/images/profilephoto.jpg",
+            "firstName": "Mike",
+            "secondName": "Speigel",
+            "postTime":"19 hours ago",
+            "type" : 1,
+            "post":{
+                "text":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corrupti aut doloribus ipsum recusandae sapiente, maiores veritatis dolore accusantium, consequuntur nostrum quam. Quis, facilis officia deserunt provident, est nisi culpa soluta dolore consequatur quam minima et.",
+                "picture":"/resources/images/postPicture1",
+                "poll":[
+                    "op 1",
+                    "op 1",
+                    "op 1",
+                    "op 1"
+                    ]
+            },
+            "postLikes":8,
+            "friends":[
+                {
+                    "firstName": "Jenny",
+                    "secondName":"James",
+                    "profilePhoto":"./resources/images/stranger1.jpg"
+                },
+                {
+                    "firstName": "Mike",
+                    "secondName":"Eragasi",
+                    "profilePhoto":"./resources/images/stranger2.jpg"
+                },
+                {
+                    "firstName": "Rachel",
+                    "secondName":"Newton",
+                    "profilePhoto":"./resources/images/stranger3.jpg"
+                },
+                {
+                    "firstName": "Michael",
+                    "secondName":"Oliver",
+                    "profilePhoto":"./resources/images/stranger4.jpg"
+                },
+                {
+                    "firstName": "Emma",
+                    "secondName":"Thomas",
+                    "profilePhoto":"./resources/images/stranger5.jpg"
+                }
+                
+            ],
+            "noOfComments":17,
+            "noOfSharing":24
+        },
+        {
+            "profilePicture": "./resources/images/profilephoto.jpg",
+            "firstName": "James",
+            "secondName": "Speigel",
+            "postTime":"19 hours ago",
+            "type" : 2,
+            "post":{
+                "text":"Clicked this when we were in Paris!",
+                "picture":"/resources/images/girlfriend.png",
+                "poll":[
+                    "op 1",
+                    "op 1",
+                    "op 1",
+                    "op 1"
+                ]
+            },
+            "postLikes":8,
+            "friends":[
+                {
+                    "firstName": "Jenny",
+                    "secondName":"James",
+                    "profilePhoto":"./resources/images/stranger1.jpg"
+                },
+                {
+                    "firstName": "Mike",
+                    "secondName":"Eragasi",
+                    "profilePhoto":"./resources/images/stranger2.jpg"
+                },
+                {
+                    "firstName": "Rachel",
+                    "secondName":"Newton",
+                    "profilePhoto":"./resources/images/stranger3.jpg"
+                },
+                {
+                    "firstName": "Michael",
+                    "secondName":"Oliver",
+                    "profilePhoto":"./resources/images/stranger4.jpg"
+                },
+                {
+                    "firstName": "Emma",
+                    "secondName":"Thomas",
+                    "profilePhoto":"./resources/images/stranger5.jpg"
+                }
+                
+            ],
+            "noOfComments":17,
+            "noOfSharing":24
+        },
+        {
+            "profilePicture": "./resources/images/profilephoto.jpg",
+            "firstName": "James",
+            "secondName": "Speigel",
+            "postTime":"19 hours ago",
+            "type" : 3,
+            "post":{
+                "text":"What is your opinion on global warming?",
+                "picture":"/resources/images/postPicture1",
+                "poll":[
+                    "Global warming is real, immediate action needed",
+                    "Global warming is real, but no immediate danger exists",
+                    "Global warming is fake",
+                    "None of the above"
+                    ]
+            },
+            "postLikes":8,
+            "friends":[
+                {
+                    "firstName": "Jenny",
+                    "secondName":"James",
+                    "profilePhoto":"./resources/images/stranger1.jpg"
+                },
+                {
+                    "firstName": "Mike",
+                    "secondName":"Eragasi",
+                    "profilePhoto":"./resources/images/stranger2.jpg"
+                },
+                {
+                    "firstName": "Rachel",
+                    "secondName":"Newton",
+                    "profilePhoto":"./resources/images/stranger3.jpg"
+                },
+                {
+                    "firstName": "Michael",
+                    "secondName":"Oliver",
+                    "profilePhoto":"./resources/images/stranger4.jpg"
+                },
+                {
+                    "firstName": "Emma",
+                    "secondName":"Thomas",
+                    "profilePhoto":"./resources/images/stranger5.jpg"
+                }
+                
+            ],
+            "noOfComments":17,
+            "noOfSharing":24
+        }
+
+
+        ]
+
+    // function myFunction() {
+    //       media();
+    // }
+
+    function media(){
+        for(let i=0;i<data.length;i++){
+                if(data[i].type==1){
+                    content+=`<div class="center-content-container-box1">
+                        <div class="center-content-container-box1-main">
+                            <div class="center-content-container-box1-main-picstrip">
+                                <div class="center-content-container-box1-main-picstrip-propic-cont">
+                                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
+                                        <img src="${data[i].profilePicture }" alt="Male Profile Photo">
+                                    </div>
+                                    <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
+                                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
+                                        <h4>${data[i].postTime}</h4>
+                                    </div>
+                                </div>
+                                <div class="center-content-container-box1-main-picstrip-dots">
+                                    <h3>...</h3>
+                                </div>
+                            </div>
+                            <div class="center-content-container-box1-main-textbox">
+                                <p>${data[i].post.text}</p>
+                            </div>
+                            <div class="center-content-container-box1-main-footer">
+                                <div class="center-content-container-box1-main-footer-heart-cont">
+                                    <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
+                                    <h4>${data[i].postLikes}</h4>
+                                </div>
+                                <div class="center-content-container-box1-main-footer-jumblediv-cont">
+                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
+                                        <img src="${data[i].friends[0].profilePhoto}" alt="People">  
+                                    </div>
+                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
+                                        <img src="${data[i].friends[1].profilePhoto}" alt="People">  
+                                    </div>
+                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
+                                        <img src="${data[i].friends[2].profilePhoto}" alt="People">  
+                                    </div>
+                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
+                                        <img src="${data[i].friends[3].profilePhoto}" alt="People">  
+                                    </div>
+                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
+                                        <img src="${data[i].friends[4].profilePhoto}" alt="People">  
+                                    </div>
+                                </div>
+                                <div class="center-content-container-box1-main-footer-name">
+                                    <p><b>${data[i].friends[0].firstName}</b>, <b>${data[i].friends[1].firstName}</b> and 6 more liked this</p>
+                                </div>
+                                <div class="center-content-container-box1-main-footer-icons">
+                                    <div class="center-content-container-box1-main-footer-icons-set1">
+                                        <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
+                                        <h4>${data[i].noOfComments}</h4>
+                                    </div>
+                                    <div class="center-content-container-box1-main-footer-icons-set1">
+                                        <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
+                                        <h4>${data[i].noOfSharing}</h4>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                            <h3>James Speigel</h3>
-                            <h4>19 hours ago</h4>
+                        <div class="center-content-container-box1-icons">
+                            <div class="center-content-container-box1-icon-1">
+                                <ion-icon class="box1-sideicons" name="trophy-outline"></ion-icon>
+                            </div>
+                            <div class="center-content-container-box1-icon-1">
+                                <ion-icon class="box1-sideicons" name="heart-outline"></ion-icon>
+                            </div>
+                            <div class="center-content-container-box1-icon-1">
+                                <ion-icon class="box1-sideicons" name="chatbox-ellipses-outline"></ion-icon>
+                            </div>
+                            <div class="center-content-container-box1-icon-1">
+                                <ion-icon class="box1-sideicons" name="trail-sign-outline"></ion-icon>
+                            </div>
                         </div>
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-dots">
-                        <h3>...</h3>
-                    </div>
-                </div>
-                <div class="center-content-container-box1-main-textbox">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corrupti aut doloribus ipsum recusandae sapiente, maiores veritatis dolore accusantium, consequuntur nostrum quam. Quis, facilis officia deserunt provident, est nisi culpa soluta dolore consequatur quam minima et. </p>
-                </div>
-                <div class="center-content-container-box1-main-footer">
-                    <div class="center-content-container-box1-main-footer-heart-cont">
-                        <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                        <h4>8</h4>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-cont">
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                            <img src="./resources/images/stranger1.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                            <img src="./resources/images/stranger2.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                            <img src="./resources/images/stranger3.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                            <img src="./resources/images/stranger4.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                            <img src="./resources/images/stranger5.jpg" alt="People">  
-                        </div>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-name">
-                        <p><b>Jenny</b>, <b>Robert</b> and 6 more liked this</p>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-icons">
-                        <div class="center-content-container-box1-main-footer-icons-set1">
-                            <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                            <h4>17</h4>
-                        </div>
-                        <div class="center-content-container-box1-main-footer-icons-set1">
-                            <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                            <h4>24</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="center-content-container-box1-icons">
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="trophy-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="heart-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="chatbox-ellipses-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="trail-sign-outline"></ion-icon>
-                </div>
-            </div>
-        </div>
-        <div class="center-content-container-box2">
+                    </div>`;
+                } 
+                else if(data[i].type==2){
+                content+=`<div class="center-content-container-box2">
             <div class="center-content-container-box2-main-picstrip box2-picstrip">
                 <div class="center-content-container-box1-main-picstrip-propic-cont box">
                     <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                        <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo">
+                        <img src="${data[i].profilePicture}" alt="Male Profile Photo">
                     </div>
                     <div class="center-content-container-box1-main-picstrip-propic-cont-name box2-picstrip-name">
-                        <h3>James Speigel</h3>
-                        <h4>19 hours ago</h4>
+                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
+                        <h4>${data[i].postTime}</h4>
                     </div>
                     
                 </div>
@@ -173,10 +339,10 @@
                 </div>
             </div>
             <div class="center-content-container-box2-post-text">
-                <p>Clicked this when we visited Paris!</p>
+                <p>${data[i].post.text}</p>
             </div>
             <div class="center-content-container-box2-post">
-                <img src="./resources/images/girlfriend.png" height="100%" alt="Girl Photo">
+                <img src="${data[i].post.picture}" height="100%" alt="Girl Photo">
             </div>
             <div class="box2-grey-line">
 
@@ -184,51 +350,53 @@
             <div class="box2-footer">
                 <div class="box2-foot-likes">
                     <ion-icon class="box2-foot-heart"name="heart-outline"></ion-icon>
-                    <h4>8</h4>
+                    <h4>${data[i].postLikes}</h4>
                 </div>
 
                 <div class="box2-friends">
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                        <img src="./resources/images/stranger1.jpg" alt="People">  
+                        <img src="${data[i].friends[0].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                        <img src="./resources/images/stranger2.jpg" alt="People">  
+                        <img src="${data[i].friends[1].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                        <img src="./resources/images/stranger3.jpg" alt="People">  
+                        <img src="${data[i].friends[2].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                        <img src="./resources/images/stranger4.jpg" alt="People">  
+                        <img src="${data[i].friends[3].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                        <img src="./resources/images/stranger5.jpg" alt="People">  
+                        <img src="${data[i].friends[4].profilePhoto}" alt="People">  
                     </div>
                 </div>
                 <div class="box2-likename center-content-container-box1-main-footer-name">
-                    <p><b>Jenny</b>, <b>Robert</b> and 6 more liked this</p>
+                    <p><b>${data[i].friends[0].firstName}</b>, <b>${data[i].friends[1].firstName}</b> and 6 more liked this</p>
                 </div>
                 <div class="box2-icons center-content-container-box1-main-footer-icons">
                     <div class="center-content-container-box1-main-footer-icons-set1">
                         <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                        <h4>17</h4>
+                        <h4>${data[i].noOfComments}</h4>
                     </div>
                     <div class="center-content-container-box1-main-footer-icons-set1">
                         <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                        <h4>24</h4>
+                        <h4>${data[i].noOfSharing}</h4>
                     </div>
                 </div>
 
             </div>
-        </div>
-        <div class="center-content-container-box3">
+        </div>`;
+            }
+                else if(data[i].type==3){
+                content+=`<div class="center-content-container-box3">
             <div class="box3-strip center-content-container-box1-main-picstrip">
                 <div class="center-content-container-box1-main-picstrip-propic-cont">
                     <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
                         <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo">
                     </div>
                     <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                        <h3>James Speigel</h3>
-                        <h4>19 hours ago</h4>
+                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
+                        <h4>${data[i].postTime}</h4>
                     </div>
                 </div>
                 <div class="box3-dots center-content-container-box1-main-picstrip-dots">
@@ -237,61 +405,63 @@
             </div>
             <div class="center-content-container-box3-post">
                 <div class="box3-poll-question">
-                    <p>What is your opinion?</p>
+                    <p>${data[i].post.text}</p>
                 </div>
                 <form class="box3-poll-container">
                     <input type="checkbox" id="box3-option1">
-                    <label> Global warming is real, immediate action needed</label><br>
+                    <label>${data[i].post.poll[0]}</label><br>
                     <input type="checkbox" id="box3-option2">
-                    <label> Global warming is real, but no immediate danger exists</label><br>
+                    <label>${data[i].post.poll[1]}</label><br>
                     <input type="checkbox" id="box3-option3">
-                    <label> Global warming is not real</label><br>
+                    <label> ${data[i].post.poll[2]}</label><br>
                     <input type="checkbox" id="box3-option4">
-                    <label> None of the above</label><br>
+                    <label> ${data[i].post.poll[3]}</label><br>
                     <input type="submit" value="Submit">
                   </form>
             </div>
             <div class="box3-footer">
                 <div class="center-content-container-box1-main-footer-heart-cont">
                     <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                    <h4>8</h4>
+                    <h4>${data[i].postLikes}</h4>
 
                 </div>
                 <div class="box3-footer-friends">
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                        <img src="./resources/images/stranger1.jpg" alt="People">  
+                        <img src="${data[i].friends[0].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                        <img src="./resources/images/stranger2.jpg" alt="People">  
+                        <img src="${data[i].friends[1].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                        <img src="./resources/images/stranger3.jpg" alt="People">  
+                        <img src="${data[i].friends[2].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                        <img src="./resources/images/stranger4.jpg" alt="People">  
+                        <img src="${data[i].friends[3].profilePhoto}" alt="People">  
                     </div>
                     <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                        <img src="./resources/images/stranger5.jpg" alt="People">  
+                        <img src="${data[i].friends[4].profilePhoto}" alt="People">  
                     </div>
                 </div>
                 <div class="box3-footer-friends-name center-content-container-box1-main-footer-name">
-                    <p><b>Jenny</b>, <b>Robert</b> and 6 more liked this</p>
+                    <p><b>${data[i].friends[0].firstName}</b>, <b>${data[i].friends[1].firstName}</b> and 6 more liked this</p>
                 </div>
                 <div class="box3-icons center-content-container-box1-main-footer-icons">
                     <div class="center-content-container-box1-main-footer-icons-set1">
                         <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                        <h4>17</h4>
+                        <h4>${data[i].noOfComments}</h4>
                     </div>
                     <div class="center-content-container-box1-main-footer-icons-set1">
                         <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                        <h4>24</h4>
+                        <h4>${data[i].noOfSharing}</h4>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </div>`;
+            }
+        }
+            document.getElementById("box").innerHTML = content;
+    }
+    media();
+    </script>
 </body>
 </html>
