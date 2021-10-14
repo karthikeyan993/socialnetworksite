@@ -758,3 +758,210 @@ body{
     margin-top: 3%;
     font-size: 11px;
 }
+
+/* New Post*/
+
+.newpost{
+    display: block;
+    width: 80px;
+    height: 30px;
+    background-color: rgb(65, 65, 65);
+    position: fixed;
+    right: 0.5%;bottom: 1.5%;
+
+
+}
+.newpost button{
+    background: rgb(65, 65, 65);
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 12.5%;
+    cursor: pointer;
+}
+
+/* BG Modal*/
+
+.bg-modal{
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0,0.7);
+    position: absolute;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    display: none;
+}
+
+/* Model first page*/
+
+.modal-box{
+    width: 600px;
+    height: 700px;
+    background: white;
+    position: relative;
+    border-radius:2px ;
+    overflow: hidden;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    background: none;
+    right: 5px;
+}
+
+#close-button{
+    transform: rotate(45deg);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
+.buttons{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+   
+}
+
+.next{
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+}
+
+ .next button{
+    position: absolute;
+    right: 15px;
+    width: 80px;
+    height: 50px;
+    font-size: 20px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+
+ /* Model page content*/
+
+
+.model-fp-content{
+    display: flex;
+    width: 600px;
+    height: 90%;
+}
+
+.text-content{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-content label{
+
+    font-size: 14px;
+    text-align: left;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+
+ #textbox{
+     padding: 5px 5px;
+     width: 400px;
+     height: 150px;
+
+     border: rgba(128, 128, 128, 0.404) solid 2px;
+     border-radius: 5px;
+ }
+
+ 
+ textarea{
+    resize:none;
+}
+
+.image-content{
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 9%;
+}
+
+.image-content label{
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.poll-content{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.poll-heading{
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+
+.poll-heading h3{
+    font-size: 14px;
+    position: absolute;
+    left: 11.60%;
+}
+
+.poll-form{
+    width: 100%;
+    height: 100%;
+}
+
+.poll-form label{
+    position: absolute;
+    left: 10%;
+    font-size: 14px;
+}
+
+
+.poll-question{
+    display: inline-block;
+    width: 300px;
+    height: 20px;
+    border: rgba(128, 128, 128, 0.404) solid 2px;
+    position: relative;
+    left: 40%;
+    margin-bottom: 5px;
+}
+
+.poll-option{
+    display: inline-block;
+    width: 300px;
+    height: 20px;
+    border: rgba(128, 128, 128, 0.404) solid 2px;
+    position: relative;
+    left: 40%;
+    margin-bottom: 5px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 10px;
+  }

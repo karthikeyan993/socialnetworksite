@@ -87,6 +87,52 @@
     </div>
     <div id="box" class="center-content-container"> 
     </div>
+    <div class="newpost">
+        <button type="newPost" id="newPost-button">New Post</button>
+    </div>
+
+    <div class="bg-modal">
+        <div class="modal-box">
+            <div class="close">
+            <button  id="close-button">
+            +
+            </button>
+            </div>
+            <div class="model-fp-content">
+                <div class="text-content">
+                    <label for="textbox">Text Post</label>
+                    <textarea type="textarea" rows='10' column='50' placeholder="share your thoughts here..." id="textbox"></textarea>
+                </div>
+                <div class="image-content">
+                    <label>Image Post</label>
+                    <input class="file-upload-input" type="file" onchange="readURL(this)" accept="image/*">
+                </div>
+                <div class="poll-content">
+                    <div class="poll-heading">
+                        <h3>Poll Post</h3>
+                    </div>
+                    <div class="poll-form">
+                        <label>Enter your poll question</label>
+                        <input type="text"  placeholder="ex - favourite food?" class="poll-question">
+                        <br>
+                        <input type="text" class="poll-option">
+                        <label>Option 1</label><br>
+                        <input type="text" class="poll-option">
+                        <label>Option 2</label><br>
+                        <input type="text" class="poll-option">
+                        <label>Option 3</label><br>
+                        <input type="text" class="poll-option">
+                        <label>Option 4</label>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="next">
+                    <button>Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -241,10 +287,6 @@
 
 
         ]
-
-    // function myFunction() {
-    //       media();
-    // }
 
     function media(){
         for(let i=0;i<data.length;i++){
@@ -462,6 +504,12 @@
             document.getElementById("box").innerHTML = content;
     }
     media();
+    document.getElementById('newPost-button').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='flex';
+    });
+    document.getElementById('close-button').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+    });
     </script>
 </body>
 </html>
