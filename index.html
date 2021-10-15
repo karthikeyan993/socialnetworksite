@@ -92,13 +92,34 @@
     </div>
 
     <div class="bg-modal">
-        <div class="modal-box">
-            <div class="close">
+        <div class="modal-box1">
+            <div id="close">
             <button  id="close-button">
             +
             </button>
             </div>
-            <div class="model-fp-content">
+            <div class="modal-box1-title">
+                <h3>Choose the type of post you want to share</h3>
+                <div class="title-border">
+                </div>
+            </div>
+            <div class="modal-box1-content">
+                <div class="radio-list">
+                <input type="radio" name="radio-answer" id="radio-text">
+                <label for="radio-text">Text</label><br><br>
+                <input type="radio" name="radio-answer" id="radio-image">
+                <label for="radio-image">Image</label><br><br>
+                <input type="radio" name="radio-answer" id="radio-poll">
+                <label for="radio-poll">Opinion Poll</label>
+                </div>
+                
+            </div>
+            <div class="modal1-footer">
+                <div class="modal1-next">
+                    <button id="modal1-next-button">Next</button>
+                </div>
+            </div>
+            <!--<div class="model-fp-content">
                 <div class="text-content">
                     <label for="textbox">Text Post</label>
                     <textarea type="textarea" rows='10' column='50' placeholder="share your thoughts here..." id="textbox"></textarea>
@@ -126,12 +147,95 @@
                     </div>
                 </div>
             </div>
-            <div class="buttons">
-                <div class="next">
-                    <button>Next</button>
+        -->
+            
+        </div>
+        <div class="modal-box2">
+            
+            <div id="close">
+            <button  id="close-button2">
+            +
+            </button>
+            </div>
+            <div class="modal2-content">
+                <div class="m2content-title">
+                    <h3>Write your post below</h3>
+                </div>
+                <div class="m2content-box">
+                    <textarea rows="10" columns="40" id="m2-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="modal2-footer">
+                <div class="modal2-post">
+                    <button id="modal2-post-button">Post</button>
+                </div>
+                <div class="modal2-back">
+                    <button id="modal2-back-button">Back</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-box3">
+            <div id="close">
+                <button  id="close-button3">
+                +
+                </button>
+            </div>
+            <div class="m3content-title">
+                <h3>Insert your image here</h3>
+            </div>
+            <div class="modal3-content">
+                <label>Enter your caption</label>
+                <input type="text" id="image-caption"><br><br><br>
+                <label for="file-upload-input">Click Here</label>
+                <input id="file-upload-input" type="file" onchange="readURL(this)" accept="image/*">
+            </div>
+            <div class="modal3-footer">
+                <div class="modal3-post">
+                    <button id="modal3-post-button">Post</button>
+                </div>
+                <div class="modal3-back">
+                    <button id="modal3-back-button">Back</button>
                 </div>
             </div>
         </div>
+
+        <div class="modal-box4">
+            <div id="close">
+                <button  id="close-button4">
+                +
+                </button>
+            </div>
+            <div class="m4content-title">
+                <h3>Fill the details for your poll</h3>
+            </div>
+            <div class="modal4-content">
+                <div class="poll-form">
+                    <label>Enter your poll question</label>
+                    <input type="text"  placeholder="ex - favourite food?" class="poll-question">
+                    <br>
+                    <input type="text" class="poll-option">
+                    <label>Option 1</label><br>
+                    <input type="text" class="poll-option">
+                    <label>Option 2</label><br>
+                    <input type="text" class="poll-option">
+                    <label>Option 3</label><br>
+                    <input type="text" class="poll-option">
+                    <label>Option 4</label>
+                </div>
+            </div>
+            <div class="modal4-footer">
+                <div class="modal4-post">
+                    <button id="modal4-post-button">Post</button>
+                </div>
+                <div class="modal4-back">
+                    <button id="modal4-back-button">Back</button>
+                </div>
+            </div>
+        </div>
+
+    
     </div>
 
    
@@ -506,10 +610,61 @@
     media();
     document.getElementById('newPost-button').addEventListener('click',function(){
         document.querySelector('.bg-modal').style.display='flex';
+        document.querySelector('.modal-box1').style.display='flex';
     });
     document.getElementById('close-button').addEventListener('click',function(){
         document.querySelector('.bg-modal').style.display='none';
     });
+    document.getElementById('close-button2').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box2').style.display='none';
+    });
+    document.getElementById('close-button3').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box3').style.display='none';
+    });
+    document.getElementById('close-button4').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box4').style.display='none';
+    });
+
+    document.getElementById('modal1-next-button').addEventListener('click',function(){
+
+        if(document.getElementById('radio-text').checked==true){
+
+            document.querySelector('.modal-box1').style.display='none';
+            document.querySelector('.modal-box2').style.display='flex';
+        } else if(document.getElementById('radio-image').checked==true){
+            document.querySelector('.modal-box1').style.display='none';
+            document.querySelector('.modal-box3').style.display='flex';
+        } else if(document.getElementById('radio-poll').checked==true){
+            document.querySelector('.modal-box1').style.display='none';
+            document.querySelector('.modal-box4').style.display='flex';
+        } else{
+            window.alert("Please select an option");
+        }
+    });
+
+    document.getElementById('modal2-back-button').addEventListener('click',function(){
+        document.querySelector('.modal-box2').style.display='none';
+        document.querySelector('.modal-box1').style.display='flex';
+        var radioButton = document.getElementById("radio-text");
+        radioButton.checked = false;
+        
+    });
+    document.getElementById('modal3-back-button').addEventListener('click',function(){
+        document.querySelector('.modal-box3').style.display='none';
+        document.querySelector('.modal-box1').style.display='flex';
+        var radioButton = document.getElementById("radio-image");
+        radioButton.checked = false;
+    });
+    document.getElementById('modal4-back-button').addEventListener('click',function(){
+        document.querySelector('.modal-box4').style.display='none';
+        document.querySelector('.modal-box1').style.display='flex';
+        var radioButton = document.getElementById("radio-poll");
+        radioButton.checked = false;
+    });
+
     </script>
 </body>
 </html>
