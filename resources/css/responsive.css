@@ -1,0 +1,82 @@
+@media only screen and (max-width:1490px){
+    .top-strip-findfriends-container{
+        width: 10%;
+    }
+
+    .top-strip-notification-container{
+        left: 22.5%;
+    }
+
+    .top-strip-profilepic-container{
+        left: 25%;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width:1410px){
+
+    .cover-photo-text-propic-container{
+        width: 12%;
+    }
+
+    .cover-photo-text-propic-photo{
+
+        left: 4%;
+    }
+
+}
+
+
+@media only screen and (max-width:1366px){
+
+    .top-strip-findfriends-container{
+        width: 10%;
+    }
+
+    .cover-photo-text-icons-container{
+      
+        bottom: 15px; 
+    }
+
+    .cover-photo-text-icons1-container{
+        height: 30px;
+    }
+    .cover-photo-text-icons2-container{
+        height: 30px;
+    }
+    .cover-photo-text-icons3-container{
+        height: 30px;
+    }
+
+    .box3-icons{
+        left: 25%;
+    }
+
+    .box2-icons{
+        left: 32%;
+    }
+
+    .box1-icons{
+        left: 30%;
+    }
+
+    
+    .center-content-container-box1-main-picstrip-propic-cont{
+        width: 40%;
+    }
+
+    .center-content-container-box1-main-picstrip-dots{
+        
+        left: 60%;
+    }
+    .box2-picstrip-dots{
+        left: 0;
+    }
+    .box3-dots{
+        left: 55%;
+    }
+
+}

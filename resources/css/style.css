@@ -209,7 +209,7 @@ body{
     width: 100px;
     height: 100px;
     position:absolute;
-    bottom: 55px;
+    bottom: 60px;
     border-radius: 50%;
     border: 2px solid #fff;
     overflow: hidden;
@@ -217,12 +217,16 @@ body{
 }
 
 .cover-photo-text-propic-photo img{
-   width: 100%;
-   height: 100%;
+    display: block;
+    width: 100px;
+    height: 100px;
 }
 .cover-photo-text-propic-name{
-    margin-top: 20%;
+    width: 100%;
+    height: 100%;
+    margin-top: 25%;
     text-align: center;
+    vertical-align: middle;
 }
 
 .cover-photo-text-propic-name h3{
@@ -236,6 +240,7 @@ body{
     font-size: 10px;
     padding-top: 3%;
     text-align: center;
+    font-weight: 500;
 }
 
 
@@ -313,7 +318,7 @@ body{
 .center-content-container-box1-main{
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     height: 100%;
 
 }
@@ -496,7 +501,7 @@ body{
     height: 100%;
     display: flex;
     position: relative;
-    left: 30%;
+    left: 33%;
 }
 
 .center-content-container-box1-main-footer-icons-set1{
@@ -593,7 +598,7 @@ body{
     display: flex;
     flex-direction: column;
     height: 370px;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     overflow: hidden;
     border-bottom: solid 1px rgba(209, 209, 209, 0.637);
@@ -645,6 +650,7 @@ body{
     color: rgb(165, 165, 165);
     font-size: 18px;
     align-self: center;
+    overflow: hidden;
 }
 
 .box2-foot-likes h4{
@@ -719,6 +725,7 @@ body{
 
 .box3-icons{
     position: relative;
+    left: 30%;
 }
 
 
@@ -733,7 +740,7 @@ body{
     height: 60%;
     width: 100%;
     border-bottom: solid 1px rgba(209, 209, 209, 0.637);
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .box3-poll-question{
