@@ -188,8 +188,8 @@
             <div class="modal3-content">
                 <label>Enter your caption</label>
                 <input type="text" id="image-caption"><br><br><br>
-                <label for="file-upload-input">Click Here</label>
-                <input id="file-upload-input" type="file" onchange="readURL(this)" accept="image/*">
+                <label>Enter image URL</label>
+                <input type="text" id="image-url">
             </div>
             <div class="modal3-footer">
                 <div class="modal3-post">
@@ -213,15 +213,15 @@
             <div class="modal4-content">
                 <div class="poll-form">
                     <label>Enter your poll question</label>
-                    <input type="text"  placeholder="ex - favourite food?" class="poll-question">
+                    <input type="text"  placeholder="ex - favourite food?" class="poll-question" id="p-question">
                     <br>
-                    <input type="text" class="poll-option">
+                    <input type="text" class="poll-option" id="p-option1">
                     <label>Option 1</label><br>
-                    <input type="text" class="poll-option">
+                    <input type="text" class="poll-option" id="p-option2">
                     <label>Option 2</label><br>
-                    <input type="text" class="poll-option">
+                    <input type="text" class="poll-option" id="p-option3">
                     <label>Option 3</label><br>
-                    <input type="text" class="poll-option">
+                    <input type="text" class="poll-option" id="p-option4">
                     <label>Option 4</label>
                 </div>
             </div>
@@ -242,29 +242,22 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        let content="";
-        let data = [
+        let i=0;
+    let flag=true;
+    let content="";
+        let oldData = [
         {
-            "profilePicture": "./resources/images/profilephoto.jpg",
-            "firstName": "Mike",
-            "secondName": "Speigel",
-            "postTime":"19 hours ago",
-            "type" : 1,
-            "post":{
-                "text":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corrupti aut doloribus ipsum recusandae sapiente, maiores veritatis dolore accusantium, consequuntur nostrum quam. Quis, facilis officia deserunt provident, est nisi culpa soluta dolore consequatur quam minima et.",
-                "picture":"/resources/images/postPicture1",
-                "poll":[
-                    "op 1",
-                    "op 1",
-                    "op 1",
-                    "op 1"
-                    ]
-            },
-            "postLikes":8,
-            "friends":[
+            profilePicture: "./resources/images/profilephoto.jpg",
+            firstName: "James",
+            secondName: "Speigel",
+            postTime:"19 hours ago",
+            type : 1,
+            post:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+            postLikes:8,
+            friends:[
                 {
-                    "firstName": "Jenny",
-                    "secondName":"James",
+                    "firstName": "James",
+                    "secondName":"Speigel",
                     "profilePhoto":"./resources/images/stranger1.jpg"
                 },
                 {
@@ -289,30 +282,21 @@
                 }
                 
             ],
-            "noOfComments":17,
-            "noOfSharing":24
+            noOfComments:17,
+            noOfSharing:24
         },
         {
-            "profilePicture": "./resources/images/profilephoto.jpg",
-            "firstName": "James",
-            "secondName": "Speigel",
-            "postTime":"19 hours ago",
-            "type" : 2,
-            "post":{
-                "text":"Clicked this when we were in Paris!",
-                "picture":"/resources/images/girlfriend.png",
-                "poll":[
-                    "op 1",
-                    "op 1",
-                    "op 1",
-                    "op 1"
-                ]
-            },
-            "postLikes":8,
-            "friends":[
+            profilePicture: "./resources/images/profilephoto.jpg",
+            firstName: "James",
+            secondName: "Speigel",
+            postTime:"19 hours ago",
+            type : 1,
+            post:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+            postLikes:8,
+            friends:[
                 {
-                    "firstName": "Jenny",
-                    "secondName":"James",
+                    "firstName": "James",
+                    "secondName":"Speigel",
                     "profilePhoto":"./resources/images/stranger1.jpg"
                 },
                 {
@@ -337,63 +321,265 @@
                 }
                 
             ],
-            "noOfComments":17,
-            "noOfSharing":24
-        },
-        {
-            "profilePicture": "./resources/images/profilephoto.jpg",
-            "firstName": "James",
-            "secondName": "Speigel",
-            "postTime":"19 hours ago",
-            "type" : 3,
-            "post":{
-                "text":"What is your opinion on global warming?",
-                "picture":"/resources/images/postPicture1",
-                "poll":[
-                    "Global warming is real, immediate action needed",
-                    "Global warming is real, but no immediate danger exists",
-                    "Global warming is fake",
-                    "None of the above"
-                    ]
-            },
-            "postLikes":8,
-            "friends":[
-                {
-                    "firstName": "Jenny",
-                    "secondName":"James",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            "noOfComments":17,
-            "noOfSharing":24
+            noOfComments:17,
+            noOfSharing:24
         }
-
-
         ]
+   
 
+
+    document.getElementById('newPost-button').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='flex';
+        document.querySelector('.modal-box1').style.display='flex';
+    });
+    document.getElementById('close-button').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+    });
+    document.getElementById('close-button2').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box2').style.display='none';
+    });
+    document.getElementById('close-button3').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box3').style.display='none';
+    });
+    document.getElementById('close-button4').addEventListener('click',function(){
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box4').style.display='none';
+    });
+
+    document.getElementById('modal1-next-button').addEventListener('click',function(){
+
+        if(document.getElementById('radio-text').checked==true){
+
+            document.querySelector('.modal-box1').style.display='none';
+            document.querySelector('.modal-box2').style.display='flex';
+        } else if(document.getElementById('radio-image').checked==true){
+            document.querySelector('.modal-box1').style.display='none';
+            document.querySelector('.modal-box3').style.display='flex';
+        } else if(document.getElementById('radio-poll').checked==true){
+            document.querySelector('.modal-box1').style.display='none';
+            document.querySelector('.modal-box4').style.display='flex';
+        } else{
+            window.alert("Please select an option");
+        }
+    });
+
+    document.getElementById('modal2-back-button').addEventListener('click',function(){
+        document.querySelector('.modal-box2').style.display='none';
+        document.querySelector('.modal-box1').style.display='flex';
+        var radioButton = document.getElementById("radio-text");
+        radioButton.checked = false;
+        
+    });
+    document.getElementById('modal3-back-button').addEventListener('click',function(){
+        document.querySelector('.modal-box3').style.display='none';
+        document.querySelector('.modal-box1').style.display='flex';
+        var radioButton = document.getElementById("radio-image");
+        radioButton.checked = false;
+    });
+    document.getElementById('modal4-back-button').addEventListener('click',function(){
+        document.querySelector('.modal-box4').style.display='none';
+        document.querySelector('.modal-box1').style.display='flex';
+        var radioButton = document.getElementById("radio-poll");
+        radioButton.checked = false;
+    });
+
+    document.getElementById('modal2-post-button').addEventListener('click',function(){
+        
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box2').style.display='none';
+        let appendData= {
+
+            profilePicture: "./resources/images/profilephoto.jpg",
+            firstName: "James",
+            secondName: "Speigel",
+            postTime:"19 hours ago",
+            type : 1,
+            post:document.getElementById('m2-textarea').value,
+            postLikes:8,
+            friends:[
+                {
+                    "firstName": "James",
+                    "secondName":"Speigel",
+                    "profilePhoto":"./resources/images/stranger1.jpg"
+                },
+                {
+                    "firstName": "Mike",
+                    "secondName":"Eragasi",
+                    "profilePhoto":"./resources/images/stranger2.jpg"
+                },
+                {
+                    "firstName": "Rachel",
+                    "secondName":"Newton",
+                    "profilePhoto":"./resources/images/stranger3.jpg"
+                },
+                {
+                    "firstName": "Michael",
+                    "secondName":"Oliver",
+                    "profilePhoto":"./resources/images/stranger4.jpg"
+                },
+                {
+                    "firstName": "Emma",
+                    "secondName":"Thomas",
+                    "profilePhoto":"./resources/images/stranger5.jpg"
+                }
+                
+            ],
+            noOfComments:17,
+            noOfSharing:24
+            }
+            
+    
+    
+    document.getElementById('m2-textarea').value='';
+    content="";
+    let i;
+    i=(Object.keys(localStorage).length);
+    localStorage.setItem(i,JSON.stringify(appendData));
+    media();
+    });
+    
+    document.getElementById('modal3-post-button').addEventListener('click',function(){
+        
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box3').style.display='none';
+        let appendData= {
+
+            profilePicture: "./resources/images/profilephoto.jpg",
+            firstName: "James",
+            secondName: "Speigel",
+            postTime:"19 hours ago",
+            type : 2,
+            caption:document.getElementById('image-caption').value,
+            url:document.getElementById('image-url').value,
+            postLikes:8,
+            friends:[
+                {
+                    "firstName": "James",
+                    "secondName":"Speigel",
+                    "profilePhoto":"./resources/images/stranger1.jpg"
+                },
+                {
+                    "firstName": "Mike",
+                    "secondName":"Eragasi",
+                    "profilePhoto":"./resources/images/stranger2.jpg"
+                },
+                {
+                    "firstName": "Rachel",
+                    "secondName":"Newton",
+                    "profilePhoto":"./resources/images/stranger3.jpg"
+                },
+                {
+                    "firstName": "Michael",
+                    "secondName":"Oliver",
+                    "profilePhoto":"./resources/images/stranger4.jpg"
+                },
+                {
+                    "firstName": "Emma",
+                    "secondName":"Thomas",
+                    "profilePhoto":"./resources/images/stranger5.jpg"
+                }
+                
+            ],
+            noOfComments:17,
+            noOfSharing:24
+            }
+            
+    
+    
+    document.getElementById('image-caption').value='';
+    document.getElementById('image-url').value='';
+    content="";
+    let i;
+    i=(Object.keys(localStorage).length);
+    localStorage.setItem(i,JSON.stringify(appendData));
+    media();
+    
+    
+    });
+   
+    document.getElementById('modal4-post-button').addEventListener('click',function(){
+        
+        document.querySelector('.bg-modal').style.display='none';
+        document.querySelector('.modal-box3').style.display='none';
+        let appendData= {
+
+            profilePicture: "./resources/images/profilephoto.jpg",
+            firstName: "James",
+            secondName: "Speigel",
+            postTime:"19 hours ago",
+            type : 3,
+            question:document.getElementById('p-question').value,
+            option1:document.getElementById('p-option1').value,
+            option2:document.getElementById('p-option2').value,
+            option3:document.getElementById('p-option3').value,
+            option4:document.getElementById('p-option4').value,
+            postLikes:8,
+            friends:[
+                {
+                    "firstName": "James",
+                    "secondName":"Speigel",
+                    "profilePhoto":"./resources/images/stranger1.jpg"
+                },
+                {
+                    "firstName": "Mike",
+                    "secondName":"Eragasi",
+                    "profilePhoto":"./resources/images/stranger2.jpg"
+                },
+                {
+                    "firstName": "Rachel",
+                    "secondName":"Newton",
+                    "profilePhoto":"./resources/images/stranger3.jpg"
+                },
+                {
+                    "firstName": "Michael",
+                    "secondName":"Oliver",
+                    "profilePhoto":"./resources/images/stranger4.jpg"
+                },
+                {
+                    "firstName": "Emma",
+                    "secondName":"Thomas",
+                    "profilePhoto":"./resources/images/stranger5.jpg"
+                }
+                
+            ],
+            noOfComments:17,
+            noOfSharing:24
+            }
+            
+    
+    
+    document.getElementById('p-question').value='';
+    document.getElementById('p-option1').value='';
+    document.getElementById('p-option2').value='';
+    document.getElementById('p-option3').value='';
+    document.getElementById('p-option4').value='';
+    content="";
+    let i;
+    i=(Object.keys(localStorage).length);
+    localStorage.setItem(i,JSON.stringify(appendData));
+    media();
+    });
+   
+    
+    let data={};
+    let firstTime=true;
     function media(){
-        for(let i=0;i<data.length;i++){
+
+        let j=0;
+        document.getElementById("box").innerHTML = "";
+
+
+        j = Object.keys(localStorage).length;
+
+
+        for(i=0;i<j;i++){
+            data[i]=JSON.parse(localStorage.getItem(i));
+        }
+        
+        console.log(j);
+        for(i=0;i<j;i++){
                 if(data[i].type==1){
                     content+=`<div class="center-content-container-box1">
                         <div class="center-content-container-box1-main">
@@ -412,7 +598,7 @@
                                 </div>
                             </div>
                             <div class="center-content-container-box1-main-textbox">
-                                <p>${data[i].post.text}</p>
+                                <p>${data[i].post}</p>
                             </div>
                             <div class="center-content-container-box1-main-footer">
                                 <div class="center-content-container-box1-main-footer-heart-cont">
@@ -485,10 +671,10 @@
                 </div>
             </div>
             <div class="center-content-container-box2-post-text">
-                <p>${data[i].post.text}</p>
+                <p>${data[i].caption}</p>
             </div>
             <div class="center-content-container-box2-post">
-                <img src="${data[i].post.picture}" height="100%" alt="Girl Photo">
+                <img src="${data[i].url}" height="100%" alt="Girl Photo">
             </div>
             <div class="box2-grey-line">
 
@@ -551,17 +737,17 @@
             </div>
             <div class="center-content-container-box3-post">
                 <div class="box3-poll-question">
-                    <p>${data[i].post.text}</p>
+                    <p>${data[i].question}</p>
                 </div>
                 <form class="box3-poll-container">
                     <input type="checkbox" id="box3-option1">
-                    <label>${data[i].post.poll[0]}</label><br>
+                    <label>${data[i].option1}</label><br>
                     <input type="checkbox" id="box3-option2">
-                    <label>${data[i].post.poll[1]}</label><br>
+                    <label>${data[i].option2}</label><br>
                     <input type="checkbox" id="box3-option3">
-                    <label> ${data[i].post.poll[2]}</label><br>
+                    <label> ${data[i].option3}</label><br>
                     <input type="checkbox" id="box3-option4">
-                    <label> ${data[i].post.poll[3]}</label><br>
+                    <label> ${data[i].option4}</label><br>
                     <input type="submit" value="Submit">
                   </form>
             </div>
@@ -605,66 +791,21 @@
         </div>`;
             }
         }
+        
             document.getElementById("box").innerHTML = content;
     }
-    media();
-    document.getElementById('newPost-button').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='flex';
-        document.querySelector('.modal-box1').style.display='flex';
-    });
-    document.getElementById('close-button').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-    });
-    document.getElementById('close-button2').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box2').style.display='none';
-    });
-    document.getElementById('close-button3').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box3').style.display='none';
-    });
-    document.getElementById('close-button4').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box4').style.display='none';
-    });
-
-    document.getElementById('modal1-next-button').addEventListener('click',function(){
-
-        if(document.getElementById('radio-text').checked==true){
-
-            document.querySelector('.modal-box1').style.display='none';
-            document.querySelector('.modal-box2').style.display='flex';
-        } else if(document.getElementById('radio-image').checked==true){
-            document.querySelector('.modal-box1').style.display='none';
-            document.querySelector('.modal-box3').style.display='flex';
-        } else if(document.getElementById('radio-poll').checked==true){
-            document.querySelector('.modal-box1').style.display='none';
-            document.querySelector('.modal-box4').style.display='flex';
-        } else{
-            window.alert("Please select an option");
+    
+    
+    if(firstTime==true){
+        setLocalStorage();
+        firstTime=false
+    }
+    function setLocalStorage(){
+        for(var j=0;j<oldData.length;j++){
+        localStorage.setItem(j,JSON.stringify(oldData[j]));
         }
-    });
-
-    document.getElementById('modal2-back-button').addEventListener('click',function(){
-        document.querySelector('.modal-box2').style.display='none';
-        document.querySelector('.modal-box1').style.display='flex';
-        var radioButton = document.getElementById("radio-text");
-        radioButton.checked = false;
-        
-    });
-    document.getElementById('modal3-back-button').addEventListener('click',function(){
-        document.querySelector('.modal-box3').style.display='none';
-        document.querySelector('.modal-box1').style.display='flex';
-        var radioButton = document.getElementById("radio-image");
-        radioButton.checked = false;
-    });
-    document.getElementById('modal4-back-button').addEventListener('click',function(){
-        document.querySelector('.modal-box4').style.display='none';
-        document.querySelector('.modal-box1').style.display='flex';
-        var radioButton = document.getElementById("radio-poll");
-        radioButton.checked = false;
-    });
-
+    }
+    media();
     </script>
 </body>
 </html>
