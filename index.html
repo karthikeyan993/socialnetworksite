@@ -245,7 +245,7 @@
         let i=0;
     let flag=true;
     let content="";
-        let oldData = [
+        let data = [
         {
             profilePicture: "./resources/images/profilephoto.jpg",
             firstName: "James",
@@ -434,9 +434,9 @@
     
     document.getElementById('m2-textarea').value='';
     content="";
-    let i;
-    i=(Object.keys(localStorage).length);
-    localStorage.setItem(i,JSON.stringify(appendData));
+    data.push(appendData);
+    localStorage.setItem("myData",JSON.stringify(data));
+    console.log(firstTime);
     media();
     });
     
@@ -491,12 +491,11 @@
     document.getElementById('image-caption').value='';
     document.getElementById('image-url').value='';
     content="";
-    let i;
-    i=(Object.keys(localStorage).length);
-    localStorage.setItem(i,JSON.stringify(appendData));
+    // let i;
+    // i=(Object.keys(localStorage).length);
+    data.push(appendData);
+    localStorage.setItem("myData",JSON.stringify(data));
     media();
-    
-    
     });
    
     document.getElementById('modal4-post-button').addEventListener('click',function(){
@@ -556,14 +555,15 @@
     document.getElementById('p-option3').value='';
     document.getElementById('p-option4').value='';
     content="";
-    let i;
-    i=(Object.keys(localStorage).length);
-    localStorage.setItem(i,JSON.stringify(appendData));
+    data.push(appendData);
+    localStorage.setItem("myData",JSON.stringify(data));
     media();
+    
     });
    
     
-    let data={};
+    
+
     let firstTime=true;
     function media(){
 
@@ -571,15 +571,17 @@
         document.getElementById("box").innerHTML = "";
 
 
-        j = Object.keys(localStorage).length;
-
-
-        for(i=0;i<j;i++){
-            data[i]=JSON.parse(localStorage.getItem(i));
-        }
+        // j = Object.keys(localStorage).length;
         
-        console.log(j);
-        for(i=0;i<j;i++){
+
+        // for(i=0;i<=j;i++){
+        //     data[i]=JSON.parse(localStorage.getItem("mydata"[i]));
+        // }
+        // localStorage.setItem("myData",JSON.stringify(data));
+        data=JSON.parse(localStorage.getItem("myData"));
+        console.log(data);
+        
+        for(i=0;i<data.length;i++){
                 if(data[i].type==1){
                     content+=`<div class="center-content-container-box1">
                         <div class="center-content-container-box1-main">
@@ -796,15 +798,28 @@
     }
     
     
-    if(firstTime==true){
-        setLocalStorage();
-        firstTime=false
+    
+    // if(firstTime==true){
+    //     setLocalStorage();
+    //     firstTime=false;
+    // }
+    // function setLocalStorage(){
+    //     localStorage.setItem("myData",JSON.stringify(data));
+    //     console.log("this was executed");
+    // }
+
+    // if(localStorage!=null){
+    //     media();
+    // } else {
+    //     localStorage.setItem("myData",JSON.stringify(data));
+    //     media();
+    // }
+    if(JSON.parse(localStorage.getItem("flag"))==null){
+        localStorage.setItem("myData",JSON.stringify(data));
+        localStorage.setItem("flag","true");
+        console.log(localStorage);
     }
-    function setLocalStorage(){
-        for(var j=0;j<oldData.length;j++){
-        localStorage.setItem(j,JSON.stringify(oldData[j]));
-        }
-    }
+    
     media();
     </script>
 </body>
