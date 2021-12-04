@@ -4,1086 +4,300 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Welcome to Social Networking Website!</title>
     <link rel="stylesheet" href="./resources/css/style.css">
     <link rel="stylesheet" href="./resources/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    
     <div class="top-strip">
-        <div class="top-strip-profiletext-container">
-            <h3>PROFILE PAGE</h3>
+        <div class="burger">
+            <button><ion-icon id="burger-icon" name="menu-outline"></ion-icon></button>
         </div>
-        <div class="top-strip-button-container">
-            <input type="text" placeholder="Search here people or pages">
-            <button type="button">
-                <ion-icon name="search-outline"></ion-icon>
-            </button>
-        </div>
-        <div class="top-strip-findfriends-container">
-            <h3>FIND FRIENDS</h3>
-        </div>
-        <div class="top-strip-notification-container">
-            <div class="top-strip-notification-inner-container">
-            <ion-icon class="top-strip-notification-icons" name="happy-outline"></ion-icon>
-            <ion-icon class="top-strip-notification-icons" name="chatbubbles-outline"></ion-icon>
-            <ion-icon class="top-strip-notification-icons" name="flash-outline"></ion-icon>
+        <div class="topleft">
+            <div class="ppage">
+                <p>PROFILE PAGE</p>
+            </div>
+            <div class="search">
+                <div id="sbox">
+                    <input type="text" name="srch" placeholder="Search here for people">
+                </div>
+                <div id="searchbtn" >
+                    <button id="sbtn" type="button" onclick="search()">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="findf">
+                <p>FIND FRIENDS</p>
             </div>
         </div>
-        <div class="top-strip-profilepic-container">
-            <div class="top-strip-profilepic-image">
-                <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo" width="35px" height="35px">
-            </div>
-            <div class="top-strip-profilepic-name">
-                <h3>James Speigel</h3>
-                <h4>SPACE COWBOY</h4>
-            </div>
+        <div class="topcenter">
         </div>
-    </div>
-    <div class="cover-photo-container">
-        <div class="cover-photo-cover-container">
-            <img src="./resources/images/coverphoto.jpg" alt="Nature Cover Photo" width="100%">
-        </div>
-        <div class="cover-photo-text-container">
-            <div class="cover-photo-text-menu">
-                <h3>Timeline</h3>
+        <div class="topright">
+            <div class="topnotify">
+                <ion-icon class="notiicons" name="happy-outline"></ion-icon>
+                <ion-icon class="notiicons" name="chatbubbles-outline"></ion-icon>
+                <ion-icon class="notiicons" name="flash-outline"></ion-icon>
             </div>
-            <div class="cover-photo-text-menu">
-                <h3>About</h3>
-            </div>
-            <div class="cover-photo-text-menu">
-                <h3>Friends</h3>
-            </div>
-            <div class="cover-photo-text-propic-container">
-                <div class="cover-photo-text-propic-photo">
+            <div class="topproname">
+                <div class="propic">
                     <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo">
                 </div>
-                <div class="cover-photo-text-propic-name">
-                    <h3>James Speigel</h3>
-                    <h4>San Francisco, CA</h4>
-                </div>
-            </div>
-        <div class="cover-photo-text-menu cover-photo-right">
-                <h3>Photos</h3>
-            </div>
-            <div class="cover-photo-text-menu cover-photo-right">
-                <h3>Videos</h3>
-            </div>
-            <div class="cover-photo-text-icons-container">
-                <div class="cover-photo-text-icons1-container">
-                    <ion-icon class="cover-photo-text-icons" name="happy-outline"></ion-icon>
-                </div>
-                <div class="cover-photo-text-icons2-container">
-                    <ion-icon class="cover-photo-text-icons" name="chatbubbles-outline"></ion-icon>
-                </div>
-                <div class="cover-photo-text-icons3-container">
-                    <ion-icon class="cover-photo-text-icons" name="options-outline"></ion-icon>    
-                </div> 
-            </div>
-        </div>
-    </div>
-    <div id="box" class="center-content-container">
-        <div class="center-content-container-box1">
-            <div class="center-content-container-box1-main">
-                <div class="center-content-container-box1-main-picstrip">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont">
-                        <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                            <img src=".\resources\images\profilephoto.jpg" alt="Male Profile Photo">
-                        </div>
-                        <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                            <h3>James Speigel</h3>
-                            <h4>19 hours ago</h4>
-                        </div>
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-dots">
-                        <h3>...</h3>
-                    </div>
-                </div>
-                <div class="center-content-container-box1-main-textbox">
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                </div>
-                <div class="center-content-container-box1-main-footer">
-                    <div class="center-content-container-box1-main-footer-heart-cont">
-                        <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                        <h4>8</h4>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-cont">
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                            <img src=".\resources\images\stranger1.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                            <img src=".\resources\images\stranger2.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                            <img src=".\resources\images\stranger3.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                            <img src=".\resources\images\stranger4.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                            <img src=".\resources\images\stranger5.jpg" alt="People">  
-                        </div>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-name">
-                        <p><b>Jenny</b>, <b>Richard</b> and 6 more liked this</p>
-                    </div>
-                    <div class="box1-icons center-content-container-box1-main-footer-icons">
-                        <div class="center-content-container-box1-main-footer-icons-set1">
-                            <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                            <h4>17</h4>
-                        </div>
-                        <div class="center-content-container-box1-main-footer-icons-set1">
-                            <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                            <h4>24</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="center-content-container-box1-icons">
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="trophy-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="heart-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="chatbox-ellipses-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="trail-sign-outline"></ion-icon>
+                <div class="proname">
+                    <p id="topname">James Speigel<p>
+                    <p id="nickname">SPACE COWBOY<p>
                 </div>
             </div>
         </div>
-        <div class="center-content-container-box1">
-            <div class="center-content-container-box1-main">
-                <div class="center-content-container-box1-main-picstrip">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont">
-                        <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                            <img src=".\resources\images\profilephoto.jpg" alt="Male Profile Photo">
-                        </div>
-                        <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                            <h3>James Speigel</h3>
-                            <h4>19 hours ago</h4>
-                        </div>
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-dots">
-                        <h3>...</h3>
-                    </div>
-                </div>
-                <div class="center-content-container-box1-main-textbox">
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                </div>
-                <div class=" center-content-container-box1-main-footer">
-                    <div class="center-content-container-box1-main-footer-heart-cont">
-                        <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                        <h4>8</h4>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-cont">
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                            <img src=".\resources\images\stranger1.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                            <img src=".\resources\images\stranger2.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                            <img src=".\resources\images\stranger3.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                            <img src=".\resources\images\stranger4.jpg" alt="People">  
-                        </div>
-                        <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                            <img src=".\resources\images\stranger5.jpg" alt="People">  
-                        </div>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-name">
-                        <p><b>Jenny</b>, <b>Richard</b> and 6 more liked this</p>
-                    </div>
-                    <div class="box1-icons center-content-container-box1-main-footer-icons">
-                        <div class="center-content-container-box1-main-footer-icons-set1">
-                            <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                            <h4>17</h4>
-                        </div>
-                        <div class="center-content-container-box1-main-footer-icons-set1">
-                            <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                            <h4>24</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="center-content-container-box1-icons">
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="trophy-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="heart-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="chatbox-ellipses-outline"></ion-icon>
-                </div>
-                <div class="center-content-container-box1-icon-1">
-                    <ion-icon class="box1-sideicons" name="trail-sign-outline"></ion-icon>
-                </div>
-            </div>
-        </div>
-        <div class="center-content-container-box2">
-            <div class="center-content-container-box2-main-picstrip box2-picstrip">
-                <div class="center-content-container-box1-main-picstrip-propic-cont box">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                        <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo">
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-name box2-picstrip-name">
-                        <h3>James Speigel</h3>
-                        <h4>19 hours ago</h4>
-                    </div>
-                    
-                </div>
-                <div class="box2-picstrip-dots center-content-container-box1-main-picstrip-dots">
-                    <h3>...</h3>
-                </div>
-            </div>
-            <div class="center-content-container-box2-post-text">
-                <p>Clicked this when we were in Paris!</p>
-            </div>
-            <div class="center-content-container-box2-post">
-                <img src="./resources/images/girlfriend.png" height="100%" alt="Girl Photo">
-            </div>
-            <div class="box2-grey-line">
-
-            </div>
-            <div class="box2-footer">
-                <div class="box2-foot-likes">
-                    <ion-icon class="box2-foot-heart"name="heart-outline"></ion-icon>
-                    <h4>8</h4>
-                </div>
-
-                <div class="box2-friends">
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                        <img src=".\resources\images\stranger1.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                        <img src=".\resources\images\stranger2.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                        <img src=".\resources\images\stranger3.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                        <img src=".\resources\images\stranger4.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                        <img src=".\resources\images\stranger5.jpg" alt="People">  
-                    </div>
-                </div>
-                <div class="box2-likename center-content-container-box1-main-footer-name">
-                    <p><b>Rufus</b>, <b>Michael</b> and 6 more liked this</p>
-                </div>
-                <div class="box2-icons center-content-container-box1-main-footer-icons">
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                        <h4>13</h4>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                        <h4>24</h4>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="center-content-container-box3">
-            <div class="box3-strip center-content-container-box1-main-picstrip">
-                <div class="center-content-container-box1-main-picstrip-propic-cont">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                        <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo">
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                        <h3>James Speigel</h3>
-                        <h4>19 hours ago</h4>
-                    </div>
-                </div>
-                <div class="box3-dots center-content-container-box1-main-picstrip-dots">
-                    <h3>...</h3>
-                </div>
-            </div>
-            <div class="center-content-container-box3-post">
-                <div class="box3-poll-question">
-                    <p>What do you think about climate change?</p>
-                </div>
-                <form class="box3-poll-container">
-                    <input type="checkbox" id="box3-option1">
-                    <label>Climate change is real and needs immediate action</label><br>
-                    <input type="checkbox" id="box3-option2">
-                    <label>Climate change is real but no need for any panic</label><br>
-                    <input type="checkbox" id="box3-option3">
-                    <label> Climate change is a hoax</label><br>
-                    <input type="checkbox" id="box3-option4">
-                    <label> I prefer not to answer this question</label><br>
-                    <input type="submit" value="Submit">
-                  </form>
-            </div>
-            <div class="box3-footer">
-                <div class="center-content-container-box1-main-footer-heart-cont">
-                    <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                    <h4>25</h4>
-
-                </div>
-                <div class="box3-footer-friends">
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                        <img src=".\resources\images\stranger2.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                        <img src=".\resources\images\stranger1.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                        <img src=".\resources\images\stranger4.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                        <img src=".\resources\images\stranger5.jpg" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                        <img src=".\resources\images\stranger3.jpg" alt="People">  
-                    </div>
-                </div>
-                <div class="box3-footer-friends-name center-content-container-box1-main-footer-name">
-                    <p><b>Karen</b>, <b>Jessy</b> and 6 more liked this</p>
-                </div>
-                <div class="box3-icons center-content-container-box1-main-footer-icons">
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                        <h4>12</h4>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                        <h4>54</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="newpost">
-        <button type="newPost" id="newPost-button">New Post</button>
-    </div>
-
-
-
-
-
-    <!-- <div class="bg-modal">
-        <div class="modal-box1">
-            <div id="close">
-            <button  id="close-button">
-            +
-            </button>
-            </div>
-            <div class="modal-box1-title">
-                <h3>Choose the type of post you want to share</h3>
-                <div class="title-border">
-                </div>
-            </div>
-            <div class="modal-box1-content">
-                <div class="radio-list">
-                <input type="radio" name="radio-answer" id="radio-text">
-                <label for="radio-text">Text</label><br><br>
-                <input type="radio" name="radio-answer" id="radio-image">
-                <label for="radio-image">Image</label><br><br>
-                <input type="radio" name="radio-answer" id="radio-poll">
-                <label for="radio-poll">Opinion Poll</label>
-                </div>
-                
-            </div>
-            <div class="modal1-footer">
-                <div class="modal1-next">
-                    <button id="modal1-next-button">Next</button>
-                </div>
-            </div>
-            <div class="model-fp-content">
-                <div class="text-content">
-                    <label for="textbox">Text Post</label>
-                    <textarea type="textarea" rows='10' column='50' placeholder="share your thoughts here..." id="textbox"></textarea>
-                </div>
-                <div class="image-content">
-                    <label>Image Post</label>
-                    <input class="file-upload-input" type="file" onchange="readURL(this)" accept="image/*">
-                </div>
-                <div class="poll-content">
-                    <div class="poll-heading">
-                        <h3>Poll Post</h3>
-                    </div>
-                    <div class="poll-form">
-                        <label>Enter your poll question</label>
-                        <input type="text"  placeholder="ex - favourite food?" class="poll-question">
-                        <br>
-                        <input type="text" class="poll-option">
-                        <label>Option 1</label><br>
-                        <input type="text" class="poll-option">
-                        <label>Option 2</label><br>
-                        <input type="text" class="poll-option">
-                        <label>Option 3</label><br>
-                        <input type="text" class="poll-option">
-                        <label>Option 4</label>
-                    </div>
-                </div>
-            </div>
         
-            
+    </div>
+    <div class="cover">
+        <div class="coverpic">
+            <img src="./resources/images/coverphoto.jpg" alt="cover photo" width="100%">
         </div>
-         <div class="modal-box2">
-            
-            <div id="close">
-            <button  id="close-button2">
-            +
-            </button>
+        <div class="menu">
+            <div class="time menusize menustyle" >
+                <p>Time</p>
             </div>
-            <div class="modal2-content">
-                <div class="m2content-title">
-                    <h3>Write your post below</h3>
+            <div class="about menusize menustyle">
+                <p>About</p>
+            </div>
+            <div class="frnd menusize menustyle">
+                <p>Friends</p>
+            </div>
+            <div class="dp menusize">
+                <div class="dppic">
+                    <img src="./resources/images/profilephoto.jpg" alt="Profile Picture">
                 </div>
-                <div class="m2content-box">
-                    <textarea rows="10" columns="40" id="m2-textarea"></textarea>
+                <div class="dpname">
+                    <p id="dpname1">James Speigel</p>
+                    <p id="dpname2">San Franscisco, CA</p>
                 </div>
+            </div>
+            <div class="photos menusize menustyle">
+                <p>Photos</p>
+            </div>
+            <div class="videos menusize menustyle">
+                <p>Videos</p>
+            </div>
+            <div class="dots menusize menustyle">
+                <p>...</p>
             </div>
 
-            <div class="modal2-footer">
-                <div class="modal2-post">
-                    <button id="modal2-post-button">Post</button>
-                </div>
-                <div class="modal2-back">
-                    <button id="modal2-back-button">Back</button>
-                </div>
-            </div>
-
         </div>
-        <div class="modal-box3">
-            <div id="close">
-                <button  id="close-button3">
-                +
-                </button>
-            </div>
-            <div class="m3content-title">
-                <h3>Insert your image here</h3>
-            </div>
-            <div class="modal3-content">
-                <label>Enter your caption</label>
-                <input type="text" id="image-caption"><br><br><br>
-                <label>Enter image URL</label>
-                <input type="text" id="image-url">
-            </div>
-            <div class="modal3-footer">
-                <div class="modal3-post">
-                    <button id="modal3-post-button">Post</button>
+        <div class="menuicons">
+            <ion-icon class="coloricon color1" name="happy-outline"></ion-icon>
+            <ion-icon class="coloricon color2" name="chatbubbles-outline"></ion-icon>
+            <ion-icon class="coloricon color3" name="options-outline"></ion-icon> 
+        </div>
+    </div>
+    <div id="box">
+        <div class="box1">
+            <div class="box1head">
+                <div class="box1dp">
+                    <img src="./resources/images/profilephoto.jpg" alt="Profile Photo">
                 </div>
-                <div class="modal3-back">
-                    <button id="modal3-back-button">Back</button>
+                <div class="box1name">
+                    <p id="box1dpname">James Speigel</p>
+                    <p id="box1time">19 hours ago</p>
+                </div>
+                <div class="box1dummy">
+
+                </div>
+                <div class="box1dot">
+                    <p>...</p>
+                </div>
+            </div>
+            <div class="box1post">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptate illum accusamus quod amet sapiente commodi veritatis atque deserunt, optio dignissimos delectus sint, ipsum mollitia deleniti dolorum doloribus libero. Ducimus error tempora ad repellendus soluta quisquam similique, officia quam aut?</p>
+            </div>
+            <div class="box1foot">
+                <div class="box1heart">
+                    <ion-icon class="heart"name="heart-outline"></ion-icon>
+                </div>
+                <div class="box1likes">
+                    <p>25</p>
+                </div>
+                <div class="box1frndspic">
+                    <img id="friend1" src="./resources/images/stranger1.jpg" alt="Friend photo">
+                    <img id="friend2" src="./resources/images/stranger2.jpg" alt="Friend photo">
+                    <img id="friend3" src="./resources/images/stranger3.jpg" alt="Friend photo">
+                    <img id="friend4" src="./resources/images/stranger4.jpg" alt="Friend photo">
+                    <img id="friend5" src="./resources/images/stranger5.jpg" alt="Friend photo">
+                </div>
+                <div class="box1frndsname">
+                    <p><b>Jenny</b>, <b>Robert</b> and<br> 6 more liked this</p>
+                </div>
+                <div class="box1footdum">
+                </div>
+                <div class="box1noti">
+                    <div class="box1comm">
+                        <ion-icon class="box1chat"name="chatbox-ellipses-outline"></ion-icon>
+                        <p class="comnum">17</p>
+                    </div>
+                    <div class="box1share">
+                        <ion-icon class="box1chat" name="trail-sign-outline"></ion-icon>
+                        <p class="comnum">24</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="box2">
+            <div class="box1head">
+                <div class="box1dp">
+                    <img src="./resources/images/profilephoto.jpg" alt="Profile Photo">
+                </div>
+                <div class="box1name">
+                    <p id="box1dpname">James Speigel</p>
+                    <p id="box1time">19 hours ago</p>
+                </div>
+                <div class="box1dummy">
 
-        <div class="modal-box4">
-            <div id="close">
-                <button  id="close-button4">
-                +
-                </button>
-            </div>
-            <div class="m4content-title">
-                <h3>Fill the details for your poll</h3>
-            </div>
-            <div class="modal4-content">
-                <div class="poll-form">
-                    <label>Enter your poll question</label>
-                    <input type="text"  placeholder="ex - favourite food?" class="poll-question" id="p-question">
-                    <br>
-                    <input type="text" class="poll-option" id="p-option1">
-                    <label>Option 1</label><br>
-                    <input type="text" class="poll-option" id="p-option2">
-                    <label>Option 2</label><br>
-                    <input type="text" class="poll-option" id="p-option3">
-                    <label>Option 3</label><br>
-                    <input type="text" class="poll-option" id="p-option4">
-                    <label>Option 4</label>
+                </div>
+                <div class="box1dot">
+                    <p>...</p>
                 </div>
             </div>
-            <div class="modal4-footer">
-                <div class="modal4-post">
-                    <button id="modal4-post-button">Post</button>
+            <div class="box2post">
+                <div class="descrip">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, doloribus?</p>
                 </div>
-                <div class="modal4-back">
-                    <button id="modal4-back-button">Back</button>
+                <div class="imgpost">
+                    <img src="./resources/images/girl.jpg" alt="Girl Photo">
                 </div>
             </div>
-        </div>  -->
+            <div class="box1foot">
+                <div class="box1heart">
+                    <ion-icon class="heart"name="heart-outline"></ion-icon>
+                </div>
+                <div class="box1likes">
+                    <p>25</p>
+                </div>
+                <div class="box1frndspic">
+                    <img id="friend1" src="./resources/images/stranger1.jpg" alt="Friend photo">
+                    <img id="friend2" src="./resources/images/stranger2.jpg" alt="Friend photo">
+                    <img id="friend3" src="./resources/images/stranger3.jpg" alt="Friend photo">
+                    <img id="friend4" src="./resources/images/stranger4.jpg" alt="Friend photo">
+                    <img id="friend5" src="./resources/images/stranger5.jpg" alt="Friend photo">
+                </div>
+                <div class="box1frndsname">
+                    <p><b>Jenny</b>, <b>Robert</b> and<br> 6 more liked this</p>
+                </div>
+                <div class="box1footdum">
+                </div>
+                <div class="box1noti">
+                    <div class="box1comm">
+                        <ion-icon class="box1chat"name="chatbox-ellipses-outline"></ion-icon>
+                        <p class="comnum">17</p>
+                    </div>
+                    <div class="box1share">
+                        <ion-icon class="box1chat" name="trail-sign-outline"></ion-icon>
+                        <p class="comnum">24</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="box1head">
+                <div class="box1dp">
+                    <img src="./resources/images/profilephoto.jpg" alt="Profile Photo">
+                </div>
+                <div class="box1name">
+                    <p id="box1dpname">James Speigel</p>
+                    <p id="box1time">19 hours ago</p>
+                </div>
+                <div class="box1dummy">
+
+                </div>
+                <div class="box1dot">
+                    <p>...</p>
+                </div>
+            </div>
+            <div id="poll" class="box3post">
+                    <div class="que">
+                        <p>Is Climate Change real?!</p>
+                    </div>
+                    <div class="options">
+                        <input type="radio" id="option1" checked="checked" name="answer">
+                        <label for="option1">Climate Change is real, immediate action needed</label><br>
+                        <input type="radio" id="option2" name="answer">
+                        <label for="option2">Climate Change is real, no need to alarm</label><br>
+                        <input type="radio" id="option3" name="answer">
+                        <label for="option3">Climate Change isn't real</label><br>
+                        <input type="radio" id="option4" name="answer">
+                        <label for="option4">No comments</label>
+                    </div>
+                    <div class="submit">
+                        <button id="submitbtn" onclick="result()">Submit</button>
+                    </div>
+            </div>
+            <div class="box1foot">
+                <div class="box1heart">
+                    <ion-icon class="heart"name="heart-outline"></ion-icon>
+                </div>
+                <div class="box1likes">
+                    <p>25</p>
+                </div>
+                <div class="box1frndspic">
+                    <img id="friend1" src="./resources/images/stranger1.jpg" alt="Friend photo">
+                    <img id="friend2" src="./resources/images/stranger2.jpg" alt="Friend photo">
+                    <img id="friend3" src="./resources/images/stranger3.jpg" alt="Friend photo">
+                    <img id="friend4" src="./resources/images/stranger4.jpg" alt="Friend photo">
+                    <img id="friend5" src="./resources/images/stranger5.jpg" alt="Friend photo">
+                </div>
+                <div class="box1frndsname">
+                    <p><b>Jenny</b>, <b>Robert</b> and<br> 6 more liked this</p>
+                </div>
+                <div class="box1footdum">
+                </div>
+                <div class="box1noti">
+                    <div class="box1comm">
+                        <ion-icon class="box1chat"name="chatbox-ellipses-outline"></ion-icon>
+                        <p class="comnum">17</p>
+                    </div>
+                    <div class="box1share">
+                        <ion-icon class="box1chat" name="trail-sign-outline"></ion-icon>
+                        <p class="comnum">24</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="newpost">
+        <ion-icon id="newicon" name="add-outline"></ion-icon>
+    </button>
    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
- 
-    <!-- <script>
-        let i=0;
-    let flag=true;
-    let content="";
-        let oldData = [
-        {
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 1,
-            post:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            noOfComments:17,
-            noOfSharing:24
-        },
-        {
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 1,
-            post:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            noOfComments:17,
-            noOfSharing:24
-        }
-        ]
-   
-
-
-    document.getElementById('newPost-button').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='flex';
-        document.querySelector('.modal-box1').style.display='flex';
-    });
-    document.getElementById('close-button').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-    });
-    document.getElementById('close-button2').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box2').style.display='none';
-    });
-    document.getElementById('close-button3').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box3').style.display='none';
-    });
-    document.getElementById('close-button4').addEventListener('click',function(){
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box4').style.display='none';
-    });
-
-    document.getElementById('modal1-next-button').addEventListener('click',function(){
-
-        if(document.getElementById('radio-text').checked==true){
-
-            document.querySelector('.modal-box1').style.display='none';
-            document.querySelector('.modal-box2').style.display='flex';
-        } else if(document.getElementById('radio-image').checked==true){
-            document.querySelector('.modal-box1').style.display='none';
-            document.querySelector('.modal-box3').style.display='flex';
-        } else if(document.getElementById('radio-poll').checked==true){
-            document.querySelector('.modal-box1').style.display='none';
-            document.querySelector('.modal-box4').style.display='flex';
-        } else{
-            window.alert("Please select an option");
-        }
-    });
-
-    document.getElementById('modal2-back-button').addEventListener('click',function(){
-        document.querySelector('.modal-box2').style.display='none';
-        document.querySelector('.modal-box1').style.display='flex';
-        var radioButton = document.getElementById("radio-text");
-        radioButton.checked = false;
-        
-    });
-    document.getElementById('modal3-back-button').addEventListener('click',function(){
-        document.querySelector('.modal-box3').style.display='none';
-        document.querySelector('.modal-box1').style.display='flex';
-        var radioButton = document.getElementById("radio-image");
-        radioButton.checked = false;
-    });
-    document.getElementById('modal4-back-button').addEventListener('click',function(){
-        document.querySelector('.modal-box4').style.display='none';
-        document.querySelector('.modal-box1').style.display='flex';
-        var radioButton = document.getElementById("radio-poll");
-        radioButton.checked = false;
-    });
-
-    document.getElementById('modal2-post-button').addEventListener('click',function(){
-        
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box2').style.display='none';
-        let appendData= {
-
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 1,
-            post:document.getElementById('m2-textarea').value,
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            noOfComments:17,
-            noOfSharing:24
+    <script>
+        function result(){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload=function(){
+                document.getElementById("poll").innerHTML=this.responseText;
             }
+            xhttp.open("GET","http://localhost/socialnetwork/database.php");
+            xhttp.send();
+        }
+
+        /* function result(){
+            const xhttp = new XMLHttpRequest();
             
-    
-    
-    document.getElementById('m2-textarea').value='';
-    content="";
-    let i;
-    i=(Object.keys(localStorage).length);
-    localStorage.setItem(i,JSON.stringify(appendData));
-    media();
-    });
-    
-    document.getElementById('modal3-post-button').addEventListener('click',function(){
-        
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box3').style.display='none';
-        let appendData= {
-
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 2,
-            caption:document.getElementById('image-caption').value,
-            url:document.getElementById('image-url').value,
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            noOfComments:17,
-            noOfSharing:24
+            xhttp.open("POST","http://localhost/socialnetwork/file.php");
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.onload=function(){
+                document.getElementById("poll").innerHTML=this.responseText;       
             }
-            
+            var data={'name':"karthi"}
+            xhttp.send(JSON.stringify(data));
+        } */
+    </script>
+    <form action="">
+        <input type="text" name="fname">
+    </form>
     
-    
-    document.getElementById('image-caption').value='';
-    document.getElementById('image-url').value='';
-    content="";
-    let i;
-    i=(Object.keys(localStorage).length);
-    localStorage.setItem(i,JSON.stringify(appendData));
-    media();
-    
-    
-    });
-   
-    document.getElementById('modal4-post-button').addEventListener('click',function(){
-        
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box3').style.display='none';
-        let appendData= {
 
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 3,
-            question:document.getElementById('p-question').value,
-            option1:document.getElementById('p-option1').value,
-            option2:document.getElementById('p-option2').value,
-            option3:document.getElementById('p-option3').value,
-            option4:document.getElementById('p-option4').value,
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            noOfComments:17,
-            noOfSharing:24
-            }
-            
-    
-    
-    document.getElementById('p-question').value='';
-    document.getElementById('p-option1').value='';
-    document.getElementById('p-option2').value='';
-    document.getElementById('p-option3').value='';
-    document.getElementById('p-option4').value='';
-    content="";
-    let i;
-    i=(Object.keys(localStorage).length);
-    localStorage.setItem(i,JSON.stringify(appendData));
-    media();
-    });
-   
-    
-    let data={};
-    let firstTime=true;
-    function media(){
-
-        let j=0;
-        document.getElementById("box").innerHTML = "";
-
-
-        j = Object.keys(localStorage).length;
-
-
-        for(i=0;i<j;i++){
-            data[i]=JSON.parse(localStorage.getItem(i));
-        }
-        
-        console.log(j);
-        for(i=0;i<j;i++){
-                if(data[i].type==1){
-                    content+=`<div class="center-content-container-box1">
-                        <div class="center-content-container-box1-main">
-                            <div class="center-content-container-box1-main-picstrip">
-                                <div class="center-content-container-box1-main-picstrip-propic-cont">
-                                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                                        <img src="${data[i].profilePicture }" alt="Male Profile Photo">
-                                    </div>
-                                    <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
-                                        <h4>${data[i].postTime}</h4>
-                                    </div>
-                                </div>
-                                <div class="center-content-container-box1-main-picstrip-dots">
-                                    <h3>...</h3>
-                                </div>
-                            </div>
-                            <div class="center-content-container-box1-main-textbox">
-                                <p>${data[i].post}</p>
-                            </div>
-                            <div class="center-content-container-box1-main-footer">
-                                <div class="center-content-container-box1-main-footer-heart-cont">
-                                    <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                                    <h4>${data[i].postLikes}</h4>
-                                </div>
-                                <div class="center-content-container-box1-main-footer-jumblediv-cont">
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                                        <img src="${data[i].friends[0].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                                        <img src="${data[i].friends[1].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                                        <img src="${data[i].friends[2].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                                        <img src="${data[i].friends[3].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                                        <img src="${data[i].friends[4].profilePhoto}" alt="People">  
-                                    </div>
-                                </div>
-                                <div class="center-content-container-box1-main-footer-name">
-                                    <p><b>${data[i].friends[0].firstName}</b>, <b>${data[i].friends[1].firstName}</b> and 6 more liked this</p>
-                                </div>
-                                <div class="center-content-container-box1-main-footer-icons">
-                                    <div class="center-content-container-box1-main-footer-icons-set1">
-                                        <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                                        <h4>${data[i].noOfComments}</h4>
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-icons-set1">
-                                        <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                                        <h4>${data[i].noOfSharing}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center-content-container-box1-icons">
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="trophy-outline"></ion-icon>
-                            </div>
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="heart-outline"></ion-icon>
-                            </div>
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="chatbox-ellipses-outline"></ion-icon>
-                            </div>
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="trail-sign-outline"></ion-icon>
-                            </div>
-                        </div>
-                    </div>`;
-                } 
-                else if(data[i].type==2){
-                content+=`<div class="center-content-container-box2">
-            <div class="center-content-container-box2-main-picstrip box2-picstrip">
-                <div class="center-content-container-box1-main-picstrip-propic-cont box">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                        <img src="${data[i].profilePicture}" alt="Male Profile Photo">
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-name box2-picstrip-name">
-                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
-                        <h4>${data[i].postTime}</h4>
-                    </div>
-                    
-                </div>
-                <div class="box2-picstrip-dots center-content-container-box1-main-picstrip-dots">
-                    <h3>...</h3>
-                </div>
-            </div>
-            <div class="center-content-container-box2-post-text">
-                <p>${data[i].caption}</p>
-            </div>
-            <div class="center-content-container-box2-post">
-                <img src="${data[i].url}" height="100%" alt="Girl Photo">
-            </div>
-            <div class="box2-grey-line">
-
-            </div>
-            <div class="box2-footer">
-                <div class="box2-foot-likes">
-                    <ion-icon class="box2-foot-heart"name="heart-outline"></ion-icon>
-                    <h4>${data[i].postLikes}</h4>
-                </div>
-
-                <div class="box2-friends">
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                        <img src="${data[i].friends[0].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                        <img src="${data[i].friends[1].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                        <img src="${data[i].friends[2].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                        <img src="${data[i].friends[3].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                        <img src="${data[i].friends[4].profilePhoto}" alt="People">  
-                    </div>
-                </div>
-                <div class="box2-likename center-content-container-box1-main-footer-name">
-                    <p><b>${data[i].friends[0].firstName}</b>, <b>${data[i].friends[1].firstName}</b> and 6 more liked this</p>
-                </div>
-                <div class="box2-icons center-content-container-box1-main-footer-icons">
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                        <h4>${data[i].noOfComments}</h4>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                        <h4>${data[i].noOfSharing}</h4>
-                    </div>
-                </div>
-
-            </div>
-        </div>`;
-            }
-                else if(data[i].type==3){
-                content+=`<div class="center-content-container-box3">
-            <div class="box3-strip center-content-container-box1-main-picstrip">
-                <div class="center-content-container-box1-main-picstrip-propic-cont">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                        <img src="./resources/images/profilephoto.jpg" alt="Male Profile Photo">
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
-                        <h4>${data[i].postTime}</h4>
-                    </div>
-                </div>
-                <div class="box3-dots center-content-container-box1-main-picstrip-dots">
-                    <h3>...</h3>
-                </div>
-            </div>
-            <div class="center-content-container-box3-post">
-                <div class="box3-poll-question">
-                    <p>${data[i].question}</p>
-                </div>
-                <form class="box3-poll-container">
-                    <input type="checkbox" id="box3-option1">
-                    <label>${data[i].option1}</label><br>
-                    <input type="checkbox" id="box3-option2">
-                    <label>${data[i].option2}</label><br>
-                    <input type="checkbox" id="box3-option3">
-                    <label> ${data[i].option3}</label><br>
-                    <input type="checkbox" id="box3-option4">
-                    <label> ${data[i].option4}</label><br>
-                    <input type="submit" value="Submit">
-                  </form>
-            </div>
-            <div class="box3-footer">
-                <div class="center-content-container-box1-main-footer-heart-cont">
-                    <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                    <h4>${data[i].postLikes}</h4>
-
-                </div>
-                <div class="box3-footer-friends">
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                        <img src="${data[i].friends[0].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                        <img src="${data[i].friends[1].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                        <img src="${data[i].friends[2].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                        <img src="${data[i].friends[3].profilePhoto}" alt="People">  
-                    </div>
-                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                        <img src="${data[i].friends[4].profilePhoto}" alt="People">  
-                    </div>
-                </div>
-                <div class="box3-footer-friends-name center-content-container-box1-main-footer-name">
-                    <p><b>${data[i].friends[0].firstName}</b>, <b>${data[i].friends[1].firstName}</b> and 6 more liked this</p>
-                </div>
-                <div class="box3-icons center-content-container-box1-main-footer-icons">
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                        <h4>${data[i].noOfComments}</h4>
-                    </div>
-                    <div class="center-content-container-box1-main-footer-icons-set1">
-                        <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                        <h4>${data[i].noOfSharing}</h4>
-                    </div>
-                </div>
-            </div>
-        </div>`;
-            }
-        }
-        
-            document.getElementById("box").innerHTML = content;
-    }
-    
-    
-    if(firstTime==true){
-        setLocalStorage();
-        firstTime=false
-    }
-    function setLocalStorage(){
-        for(var j=0;j<oldData.length;j++){
-        localStorage.setItem(j,JSON.stringify(oldData[j]));
-        }
-    }
-    media();
-    </script> -->
 </body>
 </html>

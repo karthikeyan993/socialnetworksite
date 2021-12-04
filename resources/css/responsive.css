@@ -1,82 +1,193 @@
-@media only screen and (max-width:1490px){
-    .top-strip-findfriends-container{
-        width: 10%;
+@media only screen and (max-width:1030px){
+   
+    .cover{
+        height: 300px;
+        width: 750px;
     }
 
-    .top-strip-notification-container{
-        left: 22.5%;
+    .coverpic img{
+        height: 100%;
     }
 
-    .top-strip-profilepic-container{
-        left: 25%;
+    .menuicons{
+        bottom: 60px;
+    }
+
+    .findf{
+        display: none;
+    }
+
+    .ppage{
+        display: none;
+    }
+    .burger{
+        display: flex;
+    }
+    .topleft{
+        width: 50%;
+    }
+    .topright{
+        width: 20%;
+        justify-content: end;
+    }
+
+    .topnotify{
+        display: none;        
+    }
+    .topproname{
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width:750px){
+   
+    .topleft{
+        width: 70%;
+    }
+
+    .topcenter{
+        width: 0%;
+    }
+    .topright{
+        width: 30%;
+        justify-content: end;
+    }
+
+    .topproname{
+        width: 90%;
+    }
+
+    .cover{
+        width: 500px;
+    }
+
+    .menu{
+        justify-content: space-between;
+    }
+
+
+
+    .time,.about,.photos,.frnd,.videos{
+        display: none;
     }
 
 
 }
 
+@media only screen and (max-width:520px){
 
-
-@media only screen and (max-width:1410px){
-
-    .cover-photo-text-propic-container{
-        width: 12%;
+    .box1dp{
+        margin-right: 10px;
     }
-
-    .cover-photo-text-propic-photo{
-
-        left: 4%;
+   
+    .topproname{
+        display: flex;
+        justify-content: end;
     }
-
-}
-
-
-@media only screen and (max-width:1366px){
-
-    .top-strip-findfriends-container{
+    .topleft{
+        width :75%
+    }
+    .topright{
+        width: 25%;
+    }
+    .proname{
+        display: none;
+    }
+    .propic{
         width: 10%;
+        align-self: center;
+        margin-right: 5px;
+        position: absolute;
+        right: 0;
     }
 
-    .cover-photo-text-icons-container{
-      
-        bottom: 15px; 
+    .propic img{
+        width: 40px;
+        height: 40px;
     }
 
-    .cover-photo-text-icons1-container{
-        height: 30px;
-    }
-    .cover-photo-text-icons2-container{
-        height: 30px;
-    }
-    .cover-photo-text-icons3-container{
-        height: 30px;
+   
+
+    .search{
+
+        width: 100%;
+        padding: 5px;
+        border-radius:2px;
     }
 
-    .box3-icons{
-        left: 25%;
+   .cover{
+       width: 85%;
+       
+       height: 250px;
     }
 
-    .box2-icons{
-        left: 32%;
-    }
+   #box{
+        margin: 5px auto;
+        width: 85%;
+   }
 
-    .box1-icons{
-        left: 30%;
-    }
-
-    
-    .center-content-container-box1-main-picstrip-propic-cont{
-        width: 40%;
-    }
-
-    .center-content-container-box1-main-picstrip-dots{
+    .box1,.box2,.box3{
         
-        left: 60%;
+        margin: 10px auto;
+
     }
-    .box2-picstrip-dots{
+    
+
+    .dppic{
         left: 0;
     }
-    .box3-dots{
-        left: 55%;
+
+    .dppic img{
+        width: 30%;
+        height: auto;
+        left: 0;
+        bottom: 40px;
+    }
+
+    .menuicons{
+        display: none;
+    }
+
+    .imgpost{
+        overflow: hidden;
+    }
+
+    .imgpost img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .box1frndsname{
+        display: none;
+    }
+
+    .box1frndspic{
+        display: none;
+    }
+
+    .box1heart{
+        width: 7%;
+        margin-right: 5px;
+    }
+    .box1likes{
+        width: 15%;
+    }
+
+    .box1noti{
+        width: 35%;
+    }
+
+    .box1footdum{
+        width: 50%;
+    }
+
+}
+
+@media only screen and (max-width:380px){
+
+    .box1dp{
+        margin-right: 20px;
     }
 
 }
