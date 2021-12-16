@@ -95,7 +95,7 @@
         </div>
     </div>
     <div id="box">
-        <div class="box1">
+        <!-- <div class="box1">
             <div class="box1head">
                 <div class="box1dp">
                     <img src="./resources/images/profilephoto.jpg" alt="Profile Photo">
@@ -264,15 +264,45 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-    <button class="newpost">
+    <button id="newpost" type="button">
         <ion-icon id="newicon" name="add-outline"></ion-icon>
     </button>
-   
+    <div class="modal">
+        <div class="modalmenu">
+            <ul id="list">
+                <li id="listitem"><input type="radio" name="radioinput">Text Post</li>
+                <li id="listitem"><input type="radio" name="radioinput">Image Post</li>
+                <li id="listitem"><input type="radio" name="radioinput">Poll Post</li>
+            </ul>
+        </div>
+        <div class="modal1">
+            <div class="modalform">
+                <p id="modallabel">Text Input</p>
+                <input id="modalinput" type="textarea" name="textpost"><br>
+                <button id="modalsubmit"  onclick="newtextpost()" type="button">Submit</button>
+            </div>
+
+            <button type="button" id="close">
+                <ion-icon id="close-icon"  name="close-circle-outline"></ion-icon>
+            </button>
+        </div>
+    </div>
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
+        mainbox();
+        function mainbox(){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload=function(){
+                document.getElementById("box").innerHTML=this.responseText;
+            }
+            xhttp.open("GET","http://localhost/socialnetwork/file.php");
+            xhttp.send();
+        }
+
         function result(){
             const xhttp = new XMLHttpRequest();
             xhttp.onload=function(){
@@ -282,22 +312,42 @@
             xhttp.send();
         }
 
-        /* function result(){
+         function newtextpost(){
             const xhttp = new XMLHttpRequest();
-            
-            xhttp.open("POST","http://localhost/socialnetwork/file.php");
+            xhttp.open("POST","http://localhost/socialnetwork/backend.php");
             xhttp.setRequestHeader("Content-Type", "application/json");
             xhttp.onload=function(){
-                document.getElementById("poll").innerHTML=this.responseText;       
+                alert("new data created");  
             }
-            var data={'name':"karthi"}
+            var input;
+            input=document.getElementById('modalinput').value;
+            var data;
+            data={'name':input,type:"insert"};
             xhttp.send(JSON.stringify(data));
+           // makealert();
+        }
+
+      /*   function makealert(){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload=function(){
+                alert(this.responseText);
+            }
+            xhttp.open("GET","http://localhost/socialnetwork/backend.php");
+           // xhttp.send();
         } */
-    </script>
-    <form action="">
-        <input type="text" name="fname">
-    </form>
+
+        document.getElementById('newpost').addEventListener('click',function(){
+        document.querySelector('.modal').style.display='flex';
+        document.querySelector('.modal1').style.display='flex';
+
+    });
+        document.getElementById('close').addEventListener('click',function(){
+        document.querySelector('.modal').style.display='none';
+        document.querySelector('.modal1').style.display='none';
+
+    });
     
+    </script>
 
 </body>
 </html>
