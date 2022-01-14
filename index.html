@@ -272,33 +272,256 @@
     <div class="modal">
         <div class="modalmenu">
             <ul id="list">
-                <li id="listitem"><input type="radio" name="radioinput">Text Post</li>
-                <li id="listitem"><input type="radio" name="radioinput">Image Post</li>
-                <li id="listitem"><input type="radio" name="radioinput">Poll Post</li>
+                <li class="listitem"><input id="radiotext" type="radio" name="radioinput">Text Post</li>
+                <li class="listitem"><input type="radio" name="radioinput">Image Post</li>
+                <li class="listitem"><input type="radio" name="radioinput">Poll Post</li>
             </ul>
+            <button type="button" id="closemenu">
+                <ion-icon class="close-icon"  name="close-circle-outline"></ion-icon>
+            </button>
+
+            <button type="button" id="formnext"><p>Next</p></button>
         </div>
         <div class="modal1">
             <div class="modalform">
                 <p id="modallabel">Text Input</p>
-                <input id="modalinput" type="textarea" name="textpost"><br>
-                <button id="modalsubmit"  onclick="newtextpost()" type="button">Submit</button>
+                <input id="modal1input" type="textarea" name="textpost"><br>
+                <button id="modal1submit"  onclick="newtextpost()" type="button">Submit</button>
+                <button id="modal1back" type="button">Back</button>
             </div>
 
-            <button type="button" id="close">
-                <ion-icon id="close-icon"  name="close-circle-outline"></ion-icon>
+            <button type="button" id="closetext">
+                <ion-icon class="close-icon"  name="close-circle-outline"></ion-icon>
             </button>
         </div>
+
     </div>
     
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
+        let data;
         mainbox();
+        
         function mainbox(){
+            var container="";
             const xhttp = new XMLHttpRequest();
             xhttp.onload=function(){
-                document.getElementById("box").innerHTML=this.responseText;
-            }
+              //  console.log(responseText);
+                data=JSON.parse(this.responseText);
+                console.log(data.length);
+                for(let i=data.length-1;i>=0;i--){
+                    if(data[i].posttype==1 && data[i].textpost!=""){
+                                        container+=`
+                        <div class="box1">
+                        <div class="box1head">
+                            <div class="box1dp">
+                                <img src="./resources/images/profilephoto.jpg" alt="Profile Photo">
+                            </div>
+                            <div class="box1name">
+                                <p id="box1dpname">James Speigel</p>
+                                <p id="box1time">19 hours ago</p>
+                            </div>
+                            <div class="box1dummy">
+
+                            </div>
+                            <div class="box1dot">
+                                <p>...</p>
+                            </div>
+                        </div>
+                        <div class="box1post">
+                            <p>${data[i].textpost}</p>
+                        </div>
+                        <div class="box1foot">
+                            <div class="box1heart">
+                                <div class="likebtn ">
+                                    <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
+                                    <input type ="text" class="likecount" value="${data[i].likes}">
+                                </div>                                
+                            </div>
+                            
+                            <div class="box1frndspic">
+                                <img id="friend1" src="./resources/images/stranger1.jpg" alt="Friend photo">
+                                <img id="friend2" src="./resources/images/stranger2.jpg" alt="Friend photo">
+                                <img id="friend3" src="./resources/images/stranger3.jpg" alt="Friend photo">
+                                <img id="friend4" src="./resources/images/stranger4.jpg" alt="Friend photo">
+                                <img id="friend5" src="./resources/images/stranger5.jpg" alt="Friend photo">
+                            </div>
+                            <div class="box1frndsname">
+                                <p><b>Jenny</b>, <b>Robert</b> and<br> 6 more liked this</p>
+                            </div>
+                            <div class="box1footdum">
+                            </div>
+                            <div class="box1noti">
+                                <div class="box1comm">
+                                    <ion-icon class="box1chat"name="chatbox-ellipses-outline"></ion-icon>
+                                    <p class="comnum">17</p>
+                                </div>
+                                <div class="box1share">
+                                    <ion-icon class="box1chat" name="trail-sign-outline"></ion-icon>
+                                    <p class="comnum">24</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                    } else if (data[i].posttype==2 && data[i].imagelink!=""){
+                        container+=`
+                                    <div class="box2">
+                        <div class="box1head">
+                            <div class="box1dp">
+                                <img src="./resources/images/profilephoto.jpg" alt="Profile Photo">
+                            </div>
+                            <div class="box1name">
+                                <p id="box1dpname">James Speigel</p>
+                                <p id="box1time">19 hours ago</p>
+                            </div>
+                            <div class="box1dummy">
+
+                            </div>
+                            <div class="box1dot">
+                                <p>...</p>
+                            </div>
+                        </div>
+                        <div class="box2post">
+                            <div class="descrip">
+                                <p>${data[i].imagedescrip}</p>
+                            </div>
+                            <div class="imgpost">
+                                <img src="${data[i].imagelink}" alt="Girl Photo">
+                            </div>
+                        </div>
+                        <div class="box1foot">
+                            <div class="box1heart">
+                                <div class="likebtn ">
+                                    <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
+                                    <input type ="text" class="likecount" value="${data[i].likes}">
+                                </div>                                
+                            </div>
+                            <div class="box1frndspic">
+                                <img id="friend1" src="./resources/images/stranger1.jpg" alt="Friend photo">
+                                <img id="friend2" src="./resources/images/stranger2.jpg" alt="Friend photo">
+                                <img id="friend3" src="./resources/images/stranger3.jpg" alt="Friend photo">
+                                <img id="friend4" src="./resources/images/stranger4.jpg" alt="Friend photo">
+                                <img id="friend5" src="./resources/images/stranger5.jpg" alt="Friend photo">
+                            </div>
+                            <div class="box1frndsname">
+                                <p><b>Jenny</b>, <b>Robert</b> and<br> 6 more liked this</p>
+                            </div>
+                            <div class="box1footdum">
+                            </div>
+                            <div class="box1noti">
+                                <div class="box1comm">
+                                    <ion-icon class="box1chat"name="chatbox-ellipses-outline"></ion-icon>
+                                    <p class="comnum">17</p>
+                                </div>
+                                <div class="box1share">
+                                    <ion-icon class="box1chat" name="trail-sign-outline"></ion-icon>
+                                    <p class="comnum">24</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        `;
+                    } else if(data[i].posttype==3 && data[i].pollque!="" && data[i].option1!="" && data[i].option2!=""){
+                        container+=`
+                                    <div class="box3">
+                    <div class="box1head">
+                        <div class="box1dp">
+                            <img src="./resources/images/profilephoto.jpg" alt="Profile Photo">
+                        </div>
+                        <div class="box1name">
+                            <p id="box1dpname">James Speigel</p>
+                            <p id="box1time">19 hours ago</p>
+                        </div>
+                        <div class="box1dummy">
+
+                        </div>
+                        <div class="box1dot">
+                            <p>...</p>
+                        </div>
+                    </div>
+                    <div id="poll" class="box3post">
+                            <div class="que">
+                                <p>${data[i].pollque}</p>
+                            </div>
+                            <div class="options">
+                                <input type="radio" id="option1" checked="checked" name="answer">
+                                <label for="option1">${data[i].option1}</label><br>
+                                <input type="radio" id="option2" name="answer">
+                                <label for="option2">${data[i].option2}</label><br>
+                                <input type="radio" id="option3" name="answer">
+                                <label for="option3">${data[i].option3}</label><br>
+                                <input type="radio" id="option4" name="answer">
+                                <label for="option4">${data[i].option4}</label>
+                            </div>
+                            <div class="submit">
+                                <button id="submitbtn" onclick="result()">Submit</button>
+                            </div>
+                    </div>
+                    <div class="box1foot">
+                        <div class="box1heart">
+                            <div class="likebtn ">
+                                <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
+                                <input type ="text" class="likecount" value="${data[i].likes}">
+                            </div>                                
+                        </div>
+                        <div class="box1frndspic">
+                            <img id="friend1" src="./resources/images/stranger1.jpg" alt="Friend photo">
+                            <img id="friend2" src="./resources/images/stranger2.jpg" alt="Friend photo">
+                            <img id="friend3" src="./resources/images/stranger3.jpg" alt="Friend photo">
+                            <img id="friend4" src="./resources/images/stranger4.jpg" alt="Friend photo">
+                            <img id="friend5" src="./resources/images/stranger5.jpg" alt="Friend photo">
+                        </div>
+                        <div class="box1frndsname">
+                            <p><b>Jenny</b>, <b>Robert</b> and<br> 6 more liked this</p>
+                        </div>
+                        <div class="box1footdum">
+                        </div>
+                        <div class="box1noti">
+                            <div class="box1comm">
+                                <ion-icon class="box1chat"name="chatbox-ellipses-outline"></ion-icon>
+                                <p class="comnum">17</p>
+                            </div>
+                            <div class="box1share">
+                                <ion-icon class="box1chat" name="trail-sign-outline"></ion-icon>
+                                <p class="comnum">24</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        `;
+                    }
+                }
+
+
+                document.getElementById("box").innerHTML = container;
+                
+                var btn1 = document.querySelector('.likebtn');
+                var btns1 = document.querySelectorAll('.likebtn');
+                var lc = document.querySelector('.likecount');
+                var lc1 = document.querySelectorAll('.likecount');
+
+                btns1.forEach( btn1 => {
+                    btn1.addEventListener('click', function (){
+                    if (btn1.classList.contains('like')) {
+                        btn1.classList.remove('like');
+                        this.children[1].value= parseInt(this.children[1].value) - 1;
+                        
+                        
+
+                    } else {
+                        btn1.classList.add('like');
+                        console.log(this);
+                        console.log(this.children);
+                        this.children[1].value= parseInt(this.children[1].value) + 1;
+                        
+                    }
+               
+                    }); // end of add listner
+                }); //end of for each
+                
+            } //end of onload function
+        
             xhttp.open("GET","http://localhost/socialnetwork/file.php");
             xhttp.send();
         }
@@ -320,7 +543,7 @@
                 alert("new data created");  
             }
             var input;
-            input=document.getElementById('modalinput').value;
+            input=document.getElementById('modal1input').value;
             var data;
             data={'name':input,type:"insert"};
             xhttp.send(JSON.stringify(data));
@@ -338,14 +561,57 @@
 
         document.getElementById('newpost').addEventListener('click',function(){
         document.querySelector('.modal').style.display='flex';
-        document.querySelector('.modal1').style.display='flex';
+        document.querySelector('.modalmenu').style.display='flex';
 
     });
-        document.getElementById('close').addEventListener('click',function(){
+        document.getElementById('closemenu').addEventListener('click',function(){
+        document.querySelector('.modal').style.display='none';
+        document.querySelector('.modalmenu').style.display='none';
+
+    });
+        document.getElementById('closetext').addEventListener('click',function(){
         document.querySelector('.modal').style.display='none';
         document.querySelector('.modal1').style.display='none';
 
     });
+
+    document.getElementById('modal1back').addEventListener('click',function(){
+        document.querySelector('.modalmenu').style.display='flex';
+        document.querySelector('.modal1').style.display='none';
+
+    });
+
+    
+    document.getElementById('formnext').addEventListener('click',function(){
+
+    if(document.getElementById('radiotext').checked==true){
+
+        document.querySelector('.modalmenu').style.display='none';
+        document.querySelector('.modal1').style.display='flex';
+    } else if(document.getElementById('radioimage').checked==true){
+        document.querySelector('.modalmenu').style.display='none';
+        document.querySelector('.modal2').style.display='flex';
+    } else if(document.getElementById('radiopoll').checked==true){
+        document.querySelector('.modalmenu').style.display='none';
+        document.querySelector('.modal3').style.display='flex';
+    } else{
+        window.alert("Please select an option");
+    }
+    });
+
+    
+    /*  function liked(){
+        if(document.getElementById("heart").style.fill=="" ||document.getElementById("heart").style.fill=="grey"){
+            document.getElementById("heart").style.fill="red";
+
+        } else {
+            document.getElementById("heart").style.fill="grey";
+        }
+
+    } */
+    
+       
+ 
     
     </script>
 

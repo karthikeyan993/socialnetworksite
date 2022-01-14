@@ -5,6 +5,7 @@
     border: 0;
     font-family: 'Roboto', sans-serif;
     line-height: 1;
+    
 }
 
 body{
@@ -24,7 +25,7 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 55px;
+    height: 50px;
     position: fixed;
     top: 0;
     background: rgb(63, 66, 87);
@@ -217,7 +218,7 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     width: 90%;
     height: 25%;
     margin: 0 auto;
-    font-size: 12px;
+    font-size: 14px;
 
 }
 
@@ -392,15 +393,41 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
 
 .box1heart {
     display: flex;
-    width: 5%;
+    width: 10%;
     height: 100%;
+    background: white;
+    margin-right: 5px;
+
 }
 
-.heart{
-    font-size: 17px;
-    align-self: center;
-    color: grey;
+.likebtn{
+    display: flex;
+    background: #fff;
 }
+
+.likebtn.like #heart{
+    fill: red;
+    
+}
+
+#heart{
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    
+}
+
+.likecount{
+    padding-left: 5px;
+    width: auto;
+    border: none;
+    pointer-events: none;
+}
+
+input:focus{
+    outline: none;
+}
+
 
 .box1likes{
     width: 5%;
@@ -523,7 +550,7 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
 
 .descrip p{
     color: grey;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .imgpost{
@@ -628,16 +655,26 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     display: none;
 }
 
+.close-icon{
+    font-size: 30px;
+    color:#fff;
+    background: red;
+    border-radius: 50%;
+}
+
+/*Modal Menu*/
+
 .modalmenu{
     display: none;
     position: relative;
-    width: 50%;
+    width: 40%;
     height: 50%;
     background: #000;
     border: 1px solid #fff;
     color: white;
     z-index:1001;
 }
+
 
 #list{
     display: flex;
@@ -649,31 +686,12 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     align-self: center;
 }
 
-#listitem{
+.listitem{
     margin: 10px 0px;
     font-size: 20px;
 }
 
-
-
-.modal1{
-    display: none;
-    position: relative;
-    width: 50%;
-    height: 50%;
-    background: #000;
-    border: 1px solid #fff;
-    z-index:1001;
-}
-
-#close-icon{
-    font-size: 30px;
-    color:#fff;
-    background: red;
-    border-radius: 50%;
-}
-
-#close{
+#closemenu{
     display: inline-block;
     position: absolute;
     top: -10px;
@@ -681,10 +699,41 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     border-radius: 20px;
 }
 
+
+
+
+#formnext{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    background: grey;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+#formnext p{
+    color: black;
+    font-size: 14px;
+}
+
+/* modal text*/
+
 .modalform{
+    position: relative;
     width: 100%;
     margin: 10% auto;
 
+}
+
+.modal1{
+    display: none;
+    position: relative;
+    width: 40%;
+    height: 50%;
+    background: #000;
+    border: 1px solid #fff;
+    z-index:1001;
 }
 
 #modallabel{
@@ -694,7 +743,7 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     color: #fff;
 }
 
-#modalinput{
+#modal1input{
     display: flex;
     background: grey;
     color: #fff;
@@ -704,12 +753,29 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     margin: 10px auto;
 }
 
-#modalsubmit{
-    display: flex;
-    margin: 0 auto;
-    text-align: center;
+#modal1submit{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
     background: grey;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
+    position: absolute;
+    right: 12.5%;
+}
+
+
+#modal1back{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    background: grey;
+    position: absolute;
+    left: 12.5%;
+}
+
+#closetext{
+    display: inline-block;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
 }

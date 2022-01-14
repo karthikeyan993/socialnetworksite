@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join our community for free</title>
+    <link rel="stylesheet" href="./resources/css/signup.css?v=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="form-title">
+                <h1>Sign Up</h1>
+            </div>
+            <form action="" class="form">
+                <div class="formlist">
+                    <input type="text" placeholder="First Name" id="firstName">
+                    <p id="fnerror">*Name should be 4-10 characters</p>
+                </div>
+                <div class="formlist">
+                    <input type="text" placeholder="Last Name" id="lastName">
+                    <p id="lnerror">*Name should be 1-10 characters</p>
+                </div>
+                <div class="formlist">
+                    <input type="text" placeholder="Email ID" id="email">
+                    <p id="mailerror">*please enter a valid email address</p>    
+                </div>
+                <div class="formlist">
+                    <input type="password" placeholder="Password" id="password">
+                    <p id="perror">*password should be 6-10 length<br>only numbers and alphabets accepted</p>    
+                </div>
+                <div class="formlist">
+                    <input type="password" placeholder="Confirm Password" id="confirmpass">
+                    <p id="cperror">*password mismatch</p>    
+                </div>
+                <div class="formlist">
+                    <input type="date" id="dob" name="dateodbirth" min="1900-01-01" max="2008-12-31">
+                    <p id="dob-text">*please enter your date of birth</p><br>
+                    <p id="derror">*you should be 18-100 yeard old</p>
+                </div>
+               
+                <div class="terms">
+                    <input id="chkbox" type="checkbox" > <p>I agree to the <a href="#">Terms of service</a> and <a href="#">Privacy Policy</a></p>
+                    <p id="termerror"> please accept the terms and condition to proceed</p>
+                </div>
+                <button id="form-submit" onclick="newuser()" type="submit">Submit</button>
+                
+            </form>
+            
+            
+        </div>
+        <div class="form-foot">
+            <p>Already have an account ? <a href="#"> Log in </a></p>
+        </div>
+    </div>
+    
+    <script>
+        function newuser(){
+            
+            var flag=false;
+           flag=validation();
+        
+
+            var first;
+            first=document.getElementById("firstName").value.length;
+            if (first < 4 && first > 10 ) {
+                document.querySelector('#firstName').style.border='red 2px solid';
+            }
+
+            if(flag==true){
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("POST","http://localhost/socialnetwork/register.php");
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.onload=function(){
+                    alert("New user created!"); 
+                }
+                var fname,lname,email,password,date;
+                fname=document.getElementById('firstName').value;
+                lname=document.getElementById('lastName').value;
+                email=document.getElementById('email').value;
+                password=document.getElementById('password').value;
+                date=document.getElementById('dob').value;
+
+                var data;
+                data={'firstName':fname,'lastName':lname,'email':email,'pass':password,'dob':date};
+                xhttp.send(JSON.stringify(data));
+            } 
+           // makealert();
+        }
+
+        function validation(){
+            event.preventDefault();
+            var first,last,mail,pass,cpass,check;
+            var date = new Date();
+            var remail=/\S+@\S+\.\S+/;
+            var rpass=/([a-zA-Z0-9])/;
+            var fflag=0;
+            var lflag=0;
+            var mflag=0;
+            var pflag=0;
+            var cflag=0;
+            var dflag=0;
+            first=document.getElementById("firstName").value.length;
+            last=document.getElementById("lastName").value.length;
+            mail=document.getElementById("email").value;
+            pass=document.getElementById("password").value;
+            cpass=document.getElementById("confirmpass").value;
+            date=document.getElementById("dob").value;
+            check= document.getElementById("chkbox");
+            var birth = new Date(date);
+            var today = new Date();
+            var age = today.getFullYear() - birth.getFullYear();
+            console.log(today.getMonth());
+            console.log(birth.getMonth());
+            
+            var month = today.getMonth() - birth.getMonth();
+            console.log(month);
+            var day = today.getDate() - birth.getDate();
+            if (first < 4 || first > 10 ) {
+                document.querySelector('#firstName').style.border='red 0.5px solid';
+                document.querySelector('#fnerror').style.display='flex';
+                fflag=0;
+
+            } else {
+                document.querySelector('#firstName').style.border='0.5px solid grey';
+                document.querySelector('#fnerror').style.display='none';
+                fflag=1;
+            }
+            if (last < 1 || last > 10 ) {
+                document.querySelector('#lastName').style.border='red 0.5px solid';
+                document.querySelector('#lnerror').style.display='flex';
+                lflag=0;
+
+            } else {
+                document.querySelector('#lastName').style.border='0.5px solid grey';
+                document.querySelector('#lnerror').style.display='none';
+                lflag=1;
+            }
+            
+            if(remail.test(mail)){
+                document.querySelector('#email').style.border='grey 0.5px solid';
+                document.querySelector('#mailerror').style.display='none';
+                mflag=1;
+            } else {
+                document.querySelector('#email').style.border='red 0.5px solid';
+                document.querySelector('#mailerror').style.display='flex';
+                mflag=0;
+            }
+            if(pass.length < 6 || pass.length > 10){
+                document.querySelector('#password').style.border='red 0.5px solid';
+                document.querySelector('#perror').style.display='flex';
+                pflag=0;
+            } else {
+                if(rpass.test(pass)) {
+                document.querySelector('#password').style.border='grey 0.5px solid';
+                document.querySelector('#perror').style.display='none';
+                pflag=1;
+                } else {
+                document.querySelector('#password').style.border='red 0.5px solid';
+                document.querySelector('#perror').style.display='flex';
+                pflag=0;
+                }
+            }
+            if(cpass==pass){
+                document.querySelector('#confirmpass').style.border='grey 0.5px solid';
+                document.querySelector('#cperror').style.display='none';
+                cflag=1;
+            } else{
+                document.querySelector('#confirmpass').style.border='red 0.5px solid';
+                document.querySelector('#cperror').style.display='flex';
+                cflag=0;
+            }
+            if(age>=18 && age <= 100){
+                if(age==18 && month<=0){
+                    if(month==0 && day>=0){
+                        console.log("execeuted! same age day greater");
+                        document.querySelector('#dob').style.border='grey 0.5px solid';
+                        document.querySelector('#derror').style.display='none';
+                        dflag=1;
+                    } else {
+                        document.querySelector('#dob').style.border='red 0.5px solid';
+                        document.querySelector('#derror').style.display='flex';
+                        dflag=0;
+                    }
+                } else {
+                    document.querySelector('#dob').style.border='grey 0.5px solid';
+                    document.querySelector('#derror').style.display='none';
+                    dflag=1;
+                }
+                
+            }  else {
+                document.querySelector('#dob').style.border='red 0.5px solid';
+                document.querySelector('#derror').style.display='flex';
+                dflag=0;
+            }
+
+            if(check.checked==true){
+                document.querySelector('#chkbox').style.border='grey 0.5px solid';
+                document.querySelector('#termerror').style.display='none';
+                cbflag=1;
+            } else {
+                document.querySelector('#chkbox').style.border='red 0.5px solid';
+                document.querySelector('#termerror').style.display='flex';
+                cbflag=0;
+            }
+            
+
+            if(fflag ==1 && lflag ==1 && mflag ==1 && pflag ==1 && cflag ==1 && dflag ==1 && cbflag ==1 ){
+               // event.preventDefault();
+                return true;
+               
+            } else {
+               // event.preventDefault();
+                return false;
+                
+            }
+        }
+    </script>
+</body>
+</html>
