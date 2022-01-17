@@ -1,0 +1,193 @@
+@media only screen and (max-width:1030px){
+   
+    .cover{
+        height: 300px;
+        width: 750px;
+    }
+
+    .coverpic img{
+        height: 100%;
+    }
+
+    .menuicons{
+        bottom: 60px;
+    }
+
+    .findf{
+        display: none;
+    }
+
+    .ppage{
+        display: none;
+    }
+    .burger{
+        display: flex;
+    }
+    .topleft{
+        width: 50%;
+    }
+    .topright{
+        width: 20%;
+        justify-content: end;
+    }
+
+    .topnotify{
+        display: none;        
+    }
+    .topproname{
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width:750px){
+   
+    .topleft{
+        width: 70%;
+    }
+
+    .topcenter{
+        width: 0%;
+    }
+    .topright{
+        width: 30%;
+        justify-content: end;
+    }
+
+    .topproname{
+        width: 90%;
+    }
+
+    .cover{
+        width: 500px;
+    }
+
+    .menu{
+        justify-content: space-between;
+    }
+
+
+
+    .time,.about,.photos,.frnd,.videos{
+        display: none;
+    }
+
+
+}
+
+@media only screen and (max-width:520px){
+
+    .box1dp{
+        margin-right: 10px;
+    }
+   
+    .topproname{
+        display: flex;
+        justify-content: end;
+    }
+    .topleft{
+        width :75%
+    }
+    .topright{
+        width: 25%;
+    }
+    .proname{
+        display: none;
+    }
+    .propic{
+        width: 10%;
+        align-self: center;
+        margin-right: 5px;
+        position: absolute;
+        right: 0;
+    }
+
+    .propic img{
+        width: 40px;
+        height: 40px;
+    }
+
+   
+
+    .search{
+
+        width: 100%;
+        padding: 5px;
+        border-radius:2px;
+    }
+
+   .cover{
+       width: 85%;
+       
+       height: 250px;
+    }
+
+   #box{
+        margin: 5px auto;
+        width: 85%;
+   }
+
+    .box1,.box2,.box3{
+        
+        margin: 10px auto;
+
+    }
+    
+
+    .dppic{
+        left: 0;
+    }
+
+    .dppic img{
+        width: 30%;
+        height: auto;
+        left: 0;
+        bottom: 40px;
+    }
+
+    .menuicons{
+        display: none;
+    }
+
+    .imgpost{
+        overflow: hidden;
+    }
+
+    .imgpost img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .box1frndsname{
+        display: none;
+    }
+
+    .box1frndspic{
+        display: none;
+    }
+
+    .box1heart{
+        width: 7%;
+        margin-right: 5px;
+    }
+    .box1likes{
+        width: 15%;
+    }
+
+    .box1noti{
+        width: 35%;
+    }
+
+    .box1footdum{
+        width: 50%;
+    }
+
+}
+
+@media only screen and (max-width:380px){
+
+    .box1dp{
+        margin-right: 20px;
+    }
+
+}
