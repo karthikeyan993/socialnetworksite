@@ -13,6 +13,7 @@ body{
 }
 
 
+
 /*
 name color : color: rgb(65, 65, 65);
 san francisco color: rgb(165, 165, 165);
@@ -271,7 +272,7 @@ box border border-bottom: solid 1px rgba(209, 209, 209, 0.637);
     font-weight: lighter;
     color: grey;
     white-space: nowrap;
-    font-size: 0.7em;
+    font-size: 12px;
     padding-top: 5px;
 }
 

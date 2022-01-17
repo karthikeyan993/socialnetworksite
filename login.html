@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome back</title>
+    <link rel="stylesheet" href="./resources/css/login.css?v=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="form-title">
+                <h1>Log in</h1>
+            </div>
+            <form action="" class="form">
+                <div class="formlist">
+                    <input type="text" placeholder="Email ID" id="email">
+                    <p id="mailerror">*please enter a valid email address</p>    
+                </div>
+                <div class="formlist">
+                    <input type="password" placeholder="Password" id="password">
+                    <p id="perror">*invalid password</p>    
+                </div>
+                
+                <button id="form-submit" onclick="newuser()" type="submit">Submit</button>
+                
+            </form>
+            
+            
+        </div>
+        <div class="form-foot">
+            <div class="foot-left">
+                <a href="#"> Forget password</a>
+            </div>
+           <div class="foot-right">
+            <a href="http://localhost/socialnetwork/signup.html"> New user?</a>
+           </div>
+           
+
+        </div>
+    </div>
+    <script>
+        function newuser(){
+            var flag=false;
+           flag=validation();
+            if(flag==true){
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("POST","http://localhost/socialnetwork/login.php");
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.onload=function(){
+                   if   (this.responseText=="true"){
+                       window.location.href="http://localhost/socialnetwork/index.html";
+                   } else {
+                    alert("Invalid credentials!");
+                   }
+                }
+                let email,password;
+                email=document.getElementById('email').value;
+                password=document.getElementById('password').value;
+                let data;
+                
+                data={'email':email,'pass':password};
+                xhttp.send(JSON.stringify(data));
+            }
+        }
+
+        function validation(){
+            event.preventDefault();
+            var mail,pass;
+        
+            var remail=/\S+@\S+\.\S+/;
+            var rpass=/([a-zA-Z0-9])/;
+            var mflag=0;
+            var pflag=0;
+         
+            mail=document.getElementById("email").value;
+            pass=document.getElementById("password").value;
+          
+         
+         
+            if(remail.test(mail)){
+                document.querySelector('#email').style.border='grey 0.5px solid';
+                document.querySelector('#mailerror').style.display='none';
+                mflag=1;
+            } else {
+                document.querySelector('#email').style.border='red 0.5px solid';
+                document.querySelector('#mailerror').style.display='flex';
+                mflag=0;
+            }
+            if(pass.length < 6 || pass.length > 10){
+                document.querySelector('#password').style.border='red 0.5px solid';
+                document.querySelector('#perror').style.display='flex';
+                pflag=0;
+            } else {
+                if(rpass.test(pass)) {
+                document.querySelector('#password').style.border='grey 0.5px solid';
+                document.querySelector('#perror').style.display='none';
+                pflag=1;
+                } else {
+                document.querySelector('#password').style.border='red 0.5px solid';
+                document.querySelector('#perror').style.display='flex';
+                pflag=0;
+                }
+            }
+            
+            if(mflag ==1 && pflag ==1  ){
+               // event.preventDefault();
+                return true;
+               
+            } else {
+               // event.preventDefault();
+                return false;
+                
+            }
+        }
+    </script>
+</body>
+</html>

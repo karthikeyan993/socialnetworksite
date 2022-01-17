@@ -1,4 +1,6 @@
 <?php
+session_start();
+$currentuser = $_SESSION['user'];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,7 +16,7 @@ if ($conn->connect_error) {
   $textpost=json_decode(file_get_contents('php://input'), true);
 
  // if($textpost['type']=="insert"){
-    $sql = "INSERT INTO post (`userid`, `posttype`, `textpost`) VALUES ('1','1','$textpost[name]')";
+    $sql = "INSERT INTO post (`userid`, `posttype`, `textpost`) VALUES ($currentuser,'1','$textpost[name]')";
     if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
     } else {
