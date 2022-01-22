@@ -50,13 +50,13 @@
     <script>
         let indexdata;
         mainbox();
-        
         function mainbox(){
             var container="";
             var bodycontainer=document.getElementById("wrapper").innerHTML;
             const xhttp = new XMLHttpRequest();
             xhttp.onload=function(){
                 indexdata=JSON.parse(this.responseText);
+                console.log(indexdata);
                 bodycontainer+=`
                 
                             <div class="top-strip">
@@ -167,7 +167,7 @@
                                 <p>...</p>
                             </div>
                         </div>
-                        <div class="box1post">
+                        <div class="box1post a${indexdata[i].postid}">
                             <p>${indexdata[i].textpost}</p>
                         </div>
                         <div class="box1foot">
@@ -346,13 +346,40 @@
                         this.children[1].value= parseInt(this.children[1].value) - 1;
                         
                         
+                        const xhttp = new XMLHttpRequest();
+                        xhttp.open("POST","http://localhost/socialnetwork/likes.php");
+                        xhttp.setRequestHeader("Content-Type", "application/json");
+                        xhttp.onload=function(){
+                        
+                        }
+                        var likemsg;
+
+                        likemsg=this.parentElement.parentElement.parentElement.children[1].classList[1].slice(1);
+                        var likepost;
+                        let liketype;
+                        liketype="delete";
+                        likepost={'type':liketype,'likemsg':likemsg};
+                        xhttp.send(JSON.stringify(likepost));
+                        
 
                     } else {
                         btn1.classList.add('like');
-                        console.log(this);
-                        console.log(this.children);
                         this.children[1].value= parseInt(this.children[1].value) + 1;
-                        
+                        //console.log(this.parentElement.parentElement.parentElement.children[1].classList[1]);
+                        const xhttp = new XMLHttpRequest();
+                        xhttp.open("POST","http://localhost/socialnetwork/likes.php");
+                        xhttp.setRequestHeader("Content-Type", "application/json");
+                        xhttp.onload=function(){
+                        }
+                        var likemsg;
+                        likemsg=this.parentElement.parentElement.parentElement.children[1].classList[1].slice(1);
+                        console.log(likemsg);
+                        let liketype;
+                        liketype="insert";
+                        let likepost;
+                        likepost={'type':liketype,'likemsg':likemsg};
+                        xhttp.send(JSON.stringify(likepost));
+
                     }
                
                     }); // end of add listner
@@ -364,9 +391,11 @@
             xhttp.send();
 
 
-           
+            
 
         }
+
+        
 
         function result(){
             const xhttp = new XMLHttpRequest();
@@ -434,7 +463,7 @@
             });
 
         }
-        
+    
         
     </script>
 

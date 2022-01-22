@@ -16,9 +16,9 @@ if ($conn->connect_error) {
 // $receiveuser=json_decode(file_get_contents('php://input'), true);
 // echo $POST['user'];
 $json_array = array();
-$sql = "SELECT userid, posttype, textpost, imagedescrip, imagelink, pollque, option1, option2, option3, option4,likes,user.firstname,user.lastname,user.location,user.userphoto FROM post
+$sql = "SELECT userid,postid, posttype, textpost, imagedescrip, imagelink, pollque, option1, option2, option3, option4,likes,user.firstname,user.lastname,user.location,user.userphoto FROM post
 INNER JOIN user
-WHERE userid=user.id";
+ON userid=user.id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

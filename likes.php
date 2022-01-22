@@ -1,4 +1,6 @@
 <?php
+session_start();
+$currentuser = $_SESSION['user'];
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,16 +13,29 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-  $textpost=json_decode(file_get_contents('php://input'), true);
-
- // if($textpost['type']=="insert"){
-    $sql = "INSERT INTO post (`likes`) VALUES ($textpost[likes])";
+  $likepost=json_decode(file_get_contents('php://input'), true);
+  $tempmsg = $likepost['likemsg'];
+  $optype = $likepost['type'];
+  echo $optype;
+  if($optype=="insert"){
+    $sql = "INSERT INTO likes (`userid`, `postid`) VALUES ('$currentuser','$tempmsg')";
     if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
-  //}
+  } else if ($optype=="delete") {
+
+    $sql = "DELETE FROM likes WHERE userid=$currentuser AND postid=$tempmsg";
+    if ($conn->query($sql) === TRUE) {
+      echo "Delete successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+  }
+    
+ 
   
 
 
