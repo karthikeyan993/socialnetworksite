@@ -16,11 +16,10 @@ if ($conn->connect_error) {
   $likepost=json_decode(file_get_contents('php://input'), true);
   $tempmsg = $likepost['likemsg'];
   $optype = $likepost['type'];
-  echo $optype;
   if($optype=="insert"){
     $sql = "INSERT INTO likes (`userid`, `postid`) VALUES ('$currentuser','$tempmsg')";
     if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
+      echo json_encode(array("success"=>"created successfully"));
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }

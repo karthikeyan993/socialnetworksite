@@ -172,7 +172,8 @@
                         </div>
                         <div class="box1foot">
                             <div class="box1heart">
-                                <div class="likebtn ">
+                                <div class="${indexdata[i].likeduser!=null?"likebtn like":"likebtn"}" data-post="${indexdata[i].postid}">
+                                    
                                     <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
                                     <input type ="text" class="likecount" value="${indexdata[i].likes}">
                                 </div>                                
@@ -353,14 +354,13 @@
                         
                         }
                         var likemsg;
-
-                        likemsg=this.parentElement.parentElement.parentElement.children[1].classList[1].slice(1);
+                        likemsg = this.dataset.post;
                         var likepost;
                         let liketype;
                         liketype="delete";
                         likepost={'type':liketype,'likemsg':likemsg};
                         xhttp.send(JSON.stringify(likepost));
-                        
+                
 
                     } else {
                         btn1.classList.add('like');
@@ -372,8 +372,7 @@
                         xhttp.onload=function(){
                         }
                         var likemsg;
-                        likemsg=this.parentElement.parentElement.parentElement.children[1].classList[1].slice(1);
-                        console.log(likemsg);
+                        likemsg = this.dataset.post;
                         let liketype;
                         liketype="insert";
                         let likepost;
@@ -389,10 +388,6 @@
         
             xhttp.open("GET","http://localhost/socialnetwork/file.php");
             xhttp.send();
-
-
-            
-
         }
 
         
