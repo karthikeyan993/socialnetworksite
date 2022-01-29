@@ -332,91 +332,7 @@
                 }
 
 
-<<<<<<< HEAD
-   
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>
-        let i=0;
-    let flag=true;
-    let content="";
-        let data = [
-        {
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 1,
-            post:"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            noOfComments:17,
-            noOfSharing:24
-        },
-        {
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 1,
-            post:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-=======
                 document.getElementById("box").innerHTML = container;
->>>>>>> responsive-design
                 
                 var btn1 = document.querySelector('.likebtn');
                 var btns1 = document.querySelectorAll('.likebtn');
@@ -457,28 +373,9 @@
             xhttp.onload=function(){
                 document.getElementById("poll").innerHTML=this.responseText;
             }
-<<<<<<< HEAD
-            
-    
-    
-    document.getElementById('m2-textarea').value='';
-    content="";
-    data.push(appendData);
-    localStorage.setItem("myData",JSON.stringify(data));
-    console.log(firstTime);
-    media();
-    });
-    
-    document.getElementById('modal3-post-button').addEventListener('click',function(){
-        
-        document.querySelector('.bg-modal').style.display='none';
-        document.querySelector('.modal-box3').style.display='none';
-        let appendData= {
-=======
             xhttp.open("GET","http://localhost/socialnetwork/database.php");
             xhttp.send();
         }
->>>>>>> responsive-design
 
          function newtextpost(){
             const xhttp = new XMLHttpRequest();
@@ -487,22 +384,6 @@
             xhttp.onload=function(){
                 alert("new indexdata created");  
             }
-<<<<<<< HEAD
-            
-    
-    
-    document.getElementById('image-caption').value='';
-    document.getElementById('image-url').value='';
-    content="";
-    // let i;
-    // i=(Object.keys(localStorage).length);
-    data.push(appendData);
-    localStorage.setItem("myData",JSON.stringify(data));
-    media();
-    });
-   
-    document.getElementById('modal4-post-button').addEventListener('click',function(){
-=======
             var input;
             input=document.getElementById('modal1input').value;
             var indexdata;
@@ -510,82 +391,16 @@
             xhttp.send(JSON.stringify(indexdata));
            // makealert();
         }
->>>>>>> responsive-design
         
         function newaction(){
             document.getElementById('newpost').addEventListener('click',function(){
                 document.querySelector('.modal').style.display='flex';
                 document.querySelector('.modalmenu').style.display='flex';
 
-<<<<<<< HEAD
-            profilePicture: "./resources/images/profilephoto.jpg",
-            firstName: "James",
-            secondName: "Speigel",
-            postTime:"19 hours ago",
-            type : 3,
-            question:document.getElementById('p-question').value,
-            option1:document.getElementById('p-option1').value,
-            option2:document.getElementById('p-option2').value,
-            option3:document.getElementById('p-option3').value,
-            option4:document.getElementById('p-option4').value,
-            postLikes:8,
-            friends:[
-                {
-                    "firstName": "James",
-                    "secondName":"Speigel",
-                    "profilePhoto":"./resources/images/stranger1.jpg"
-                },
-                {
-                    "firstName": "Mike",
-                    "secondName":"Eragasi",
-                    "profilePhoto":"./resources/images/stranger2.jpg"
-                },
-                {
-                    "firstName": "Rachel",
-                    "secondName":"Newton",
-                    "profilePhoto":"./resources/images/stranger3.jpg"
-                },
-                {
-                    "firstName": "Michael",
-                    "secondName":"Oliver",
-                    "profilePhoto":"./resources/images/stranger4.jpg"
-                },
-                {
-                    "firstName": "Emma",
-                    "secondName":"Thomas",
-                    "profilePhoto":"./resources/images/stranger5.jpg"
-                }
-                
-            ],
-            noOfComments:17,
-            noOfSharing:24
-            }
-            
-    
-    
-    document.getElementById('p-question').value='';
-    document.getElementById('p-option1').value='';
-    document.getElementById('p-option2').value='';
-    document.getElementById('p-option3').value='';
-    document.getElementById('p-option4').value='';
-    content="";
-    data.push(appendData);
-    localStorage.setItem("myData",JSON.stringify(data));
-    media();
-    
-    });
-   
-    
-    
-
-    let firstTime=true;
-    function media(){
-=======
             });
                 document.getElementById('closemenu').addEventListener('click',function(){
                 document.querySelector('.modal').style.display='none';
                 document.querySelector('.modalmenu').style.display='none';
->>>>>>> responsive-design
 
             });
                 document.getElementById('closetext').addEventListener('click',function(){
@@ -594,116 +409,6 @@
 
             });
 
-<<<<<<< HEAD
-        // j = Object.keys(localStorage).length;
-        
-
-        // for(i=0;i<=j;i++){
-        //     data[i]=JSON.parse(localStorage.getItem("mydata"[i]));
-        // }
-        // localStorage.setItem("myData",JSON.stringify(data));
-        data=JSON.parse(localStorage.getItem("myData"));
-        console.log(data);
-        
-        for(i=0;i<data.length;i++){
-                if(data[i].type==1){
-                    content+=`<div class="center-content-container-box1">
-                        <div class="center-content-container-box1-main">
-                            <div class="center-content-container-box1-main-picstrip">
-                                <div class="center-content-container-box1-main-picstrip-propic-cont">
-                                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                                        <img src="${data[i].profilePicture }" alt="Male Profile Photo">
-                                    </div>
-                                    <div class="center-content-container-box1-main-picstrip-propic-cont-name ">
-                                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
-                                        <h4>${data[i].postTime}</h4>
-                                    </div>
-                                </div>
-                                <div class="center-content-container-box1-main-picstrip-dots">
-                                    <h3>...</h3>
-                                </div>
-                            </div>
-                            <div class="center-content-container-box1-main-textbox">
-                                <p>${data[i].post}</p>
-                            </div>
-                            <div class="center-content-container-box1-main-footer">
-                                <div class="center-content-container-box1-main-footer-heart-cont">
-                                    <ion-icon class="box1-footer-heart"name="heart-outline"></ion-icon>
-                                    <h4>${data[i].postLikes}</h4>
-                                </div>
-                                <div class="center-content-container-box1-main-footer-jumblediv-cont">
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position1">
-                                        <img src="${data[i].friends[0].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position2">
-                                        <img src="${data[i].friends[1].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position3">
-                                        <img src="${data[i].friends[2].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position4">
-                                        <img src="${data[i].friends[3].profilePhoto}" alt="People">  
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-jumblediv-div jumblediv-div-position5">
-                                        <img src="${data[i].friends[4].profilePhoto}" alt="People">  
-                                    </div>
-                                </div>
-                                <div class="center-content-container-box1-main-footer-name">
-                                    <p><b>${data[i].friends[0].firstName}</b>, <b>${data[i].friends[1].firstName}</b> and 6 more liked this</p>
-                                </div>
-                                <div class="center-content-container-box1-main-footer-icons">
-                                    <div class="center-content-container-box1-main-footer-icons-set1">
-                                        <ion-icon class="box1-footer-icons"name="chatbox-ellipses-outline"></ion-icon>
-                                        <h4>${data[i].noOfComments}</h4>
-                                    </div>
-                                    <div class="center-content-container-box1-main-footer-icons-set1">
-                                        <ion-icon class="box1-footer-icons" name="trail-sign-outline"></ion-icon>
-                                        <h4>${data[i].noOfSharing}</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="center-content-container-box1-icons">
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="trophy-outline"></ion-icon>
-                            </div>
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="heart-outline"></ion-icon>
-                            </div>
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="chatbox-ellipses-outline"></ion-icon>
-                            </div>
-                            <div class="center-content-container-box1-icon-1">
-                                <ion-icon class="box1-sideicons" name="trail-sign-outline"></ion-icon>
-                            </div>
-                        </div>
-                    </div>`;
-                } 
-                else if(data[i].type==2){
-                content+=`<div class="center-content-container-box2">
-            <div class="center-content-container-box2-main-picstrip box2-picstrip">
-                <div class="center-content-container-box1-main-picstrip-propic-cont box">
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-pic">
-                        <img src="${data[i].profilePicture}" alt="Male Profile Photo">
-                    </div>
-                    <div class="center-content-container-box1-main-picstrip-propic-cont-name box2-picstrip-name">
-                        <h3>${data[i].firstName} ${data[i].secondName}</h3>
-                        <h4>${data[i].postTime}</h4>
-                    </div>
-                    
-                </div>
-                <div class="box2-picstrip-dots center-content-container-box1-main-picstrip-dots">
-                    <h3>...</h3>
-                </div>
-            </div>
-            <div class="center-content-container-box2-post-text">
-                <p>${data[i].caption}</p>
-            </div>
-            <div class="center-content-container-box2-post">
-                <img src="${data[i].url}" height="100%" alt="Girl Photo">
-            </div>
-            <div class="box2-grey-line">
-=======
             document.getElementById('modal1back').addEventListener('click',function(){
                 document.querySelector('.modalmenu').style.display='flex';
                 document.querySelector('.modal1').style.display='none';
@@ -712,7 +417,6 @@
 
             
             document.getElementById('formnext').addEventListener('click',function(){
->>>>>>> responsive-design
 
             if(document.getElementById('radiotext').checked==true){
 
@@ -731,37 +435,7 @@
 
         }
         
-<<<<<<< HEAD
-            document.getElementById("box").innerHTML = content;
-    }
-    
-    
-    
-    // if(firstTime==true){
-    //     setLocalStorage();
-    //     firstTime=false;
-    // }
-    // function setLocalStorage(){
-    //     localStorage.setItem("myData",JSON.stringify(data));
-    //     console.log("this was executed");
-    // }
-
-    // if(localStorage!=null){
-    //     media();
-    // } else {
-    //     localStorage.setItem("myData",JSON.stringify(data));
-    //     media();
-    // }
-    if(JSON.parse(localStorage.getItem("flag"))==null){
-        localStorage.setItem("myData",JSON.stringify(data));
-        localStorage.setItem("flag","true");
-        console.log(localStorage);
-    }
-    
-    media();
-=======
         
->>>>>>> responsive-design
     </script>
 
 </body>
