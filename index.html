@@ -51,6 +51,7 @@
         let indexdata;
         mainbox();
         function mainbox(){
+            let i;
             var container="";
             var bodycontainer=document.getElementById("wrapper").innerHTML;
             const xhttp = new XMLHttpRequest();
@@ -146,8 +147,26 @@
                 
                 `;
                 document.getElementById("wrapper").innerHTML=bodycontainer;
-                for(let i=indexdata.length-1;i>=0;i--){
+                for(i=indexdata.length-1;i>=0;i--){
                     if(indexdata[i].posttype==1 && indexdata[i].textpost!=""){
+                        if(indexdata[i].comments!=null){
+                        console.log(indexdata[i].postid);
+                        var comcontainer="";
+                        var comlen = indexdata[i].comments.length;
+                        console.log(comlen);
+                        for(let j=0;j<comlen;j++){
+                            comcontainer+=`
+                            <div class="comment-sec">
+                                <div class="com-pro">
+                                    <img src="${indexdata[i].userphoto}" alt="">
+                                </div>
+                                <div class="com-text">
+                                    <p>${indexdata[i].comments[j].text}</p>
+                                </div>
+                            </div>
+                        `;
+                        
+                    }
                                         container+=`
                         
                         
@@ -175,7 +194,7 @@
                                 <div class="${indexdata[i].likeduser!=null?"likebtn like":"likebtn"}" data-post="${indexdata[i].postid}">
                                     
                                     <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
-                                    <input type ="text" class="likecount" value="${indexdata[i].likes}">
+                                    <input type ="text" class="likecount" value="${indexdata[i].postlikes}">
                                 </div>                                
                             </div>
                             
@@ -201,8 +220,30 @@
                                     <p class="comnum">24</p>
                                 </div>
                             </div>
+                           
+                        </div>
+                        <div class="oldcomments" id="combox">
+                           `+comcontainer+`
+                        </div>
+                        <div class="comment-sec">
+                            <div class="com-pro">
+                                <img src="${indexdata[i].userphoto}" alt="Profile Photo">
+                            </div>
+                            <div class="com-text">
+                                <textarea id="com-area" placeholder="say something about this post..."></textarea>
+                            </div>
+                        </div>
+                        <div class="com-post">
+                            <button id="com-postbtn" onclick="compost()" data-post="${indexdata[i].postid}">post</button>
                         </div>
                     </div>`;
+
+                    
+
+                    
+                    }
+                    
+
                     } else if (indexdata[i].posttype==2 && indexdata[i].imagelink!=""){
                         container+=`
                                     <div class="box2">
@@ -231,9 +272,10 @@
                         </div>
                         <div class="box1foot">
                             <div class="box1heart">
-                                <div class="likebtn ">
+                                <div class="${indexdata[i].likeduser!=null?"likebtn like":"likebtn"}" data-post="${indexdata[i].postid}">
+                                    
                                     <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
-                                    <input type ="text" class="likecount" value="${indexdata[i].likes}">
+                                    <input type ="text" class="likecount" value="${indexdata[i].postlikes}">
                                 </div>                                
                             </div>
                             <div class="box1frndspic">
@@ -299,11 +341,12 @@
                     </div>
                     <div class="box1foot">
                         <div class="box1heart">
-                            <div class="likebtn ">
-                                <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
-                                <input type ="text" class="likecount" value="${indexdata[i].likes}">
-                            </div>                                
-                        </div>
+                                <div class="${indexdata[i].likeduser!=null?"likebtn like":"likebtn"}" data-post="${indexdata[i].postid}">
+                                    
+                                    <svg id="heart" viewBox="0 0 24 24" fill="grey"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
+                                    <input type ="text" class="likecount" value="${indexdata[i].postlikes}">
+                                </div>                                
+                            </div>
                         <div class="box1frndspic">
                             <img id="friend1" src="./resources/images/stranger1.jpg" alt="Friend photo">
                             <img id="friend2" src="./resources/images/stranger2.jpg" alt="Friend photo">
@@ -384,6 +427,9 @@
                     }); // end of add listner
                 }); //end of for each
                 
+                
+
+
             } //end of onload function
         
             xhttp.open("GET","http://localhost/socialnetwork/file.php");
@@ -416,6 +462,24 @@
            // makealert();
         }
         
+        function compost(){
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("POST","http://localhost/socialnetwork/comment.php");
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.onload=function(){
+                
+            }
+            var input;
+            input=document.getElementById('com-area').value;
+            var indexdata;
+            var commsg;
+            console.log(this);
+            comemsg = this.dataset.post;
+            indexdata={'input':input,'commsg':commsg};
+            xhttp.send(JSON.stringify(indexdata));
+        }
+
         function newaction(){
             document.getElementById('newpost').addEventListener('click',function(){
                 document.querySelector('.modal').style.display='flex';

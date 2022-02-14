@@ -1,0 +1,23 @@
+[{
+    "userid": "3",
+    "postid": "145",
+    "posttype": "1",
+    "textpost": "Hi! This is karthi's post",
+    "imagedescrip": "",
+    "imagelink": "",
+    "pollque": "",
+    "option1": "",
+    "option2": "",
+    "option3": "",
+    "option4": "",
+    "likes": "0",
+    "firstname": "Karthikeyan",
+    "lastname": "V",
+    "location": "Chennai, India",
+    "userphoto": "http:\/\/localhost\/socialnetwork\/resources\/images\/karthi.jpg",
+    "likeduser": null,
+    "postlikes": "0",
+    "comments":[{},{}]
+}
+
+]
